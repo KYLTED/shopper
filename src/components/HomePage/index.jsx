@@ -1,9 +1,45 @@
 import React, {Component} from 'react'
 
+import Navbar from "../Navbar"
+import Footer from '../Footer'
+
 export default class HomePage extends Component{
+	componentDidMount(){
+		let scripts = [
+			"./assets/js/theme.min.js",
+			"./assets/libs/flickity/dist/flickity.pkgd.min.js",
+			"./assets/libs/flickity-fade/flickity-fade.js"
+		]
+
+		scripts.forEach(src => {
+			const script = document.createElement("script");
+			script.src = src;
+			script.async = true;
+	
+			document.body.appendChild(script);
+		})
+	}
   render(){
     return (
-			<div className="homepage">
+			<div className="homepage"> 
+				<Navbar />
+
+				{/* <!-- PROMO --> */}
+				<div className="py-3 bg-dark bg-pattern mb-4">
+						<div className="container">
+							<div className="row">
+								<div className="col-12">
+									{/* <!-- Text --> */}
+									<div className="text-center text-white">
+										<span className="heading-xxs letter-spacing-xl">
+											⚡️ Happy Holiday Deals on Everything ⚡️
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+				
 				{/* <!-- WELCOME --> */}
 				<section className="position-relative mb-4 py-13">
 					{/* <!-- Cover --> */}
@@ -40,7 +76,7 @@ export default class HomePage extends Component{
 						</div>
 					</div>
 				</section>
-
+ 
 				{/* <!-- SALE --> */}
 				<section className="py-12 bg-primary bg-pattern">
 					<div className="container">
@@ -141,34 +177,34 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productOneColorOne" name="productOneColor" className="custom-control-input" checked />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productOneImg" data-slide="0" style={{color: "beige"}} for="productOneColorOne"></label>
+															<input type="radio" id="productOneColorOne" name="productOneColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productOneImg" data-slide="0" style={{color: "beige"}} htmlFor="productOneColorOne"></label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-color ml-n2">
 															<input type="radio" id="productOneColorTwo" name="productOneColor" className="custom-control-input" />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productOneImg" data-slide="1" style={{color: "black"}} for="productOneColorTwo"></label>
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productOneImg" data-slide="1" style={{color: "black"}} htmlFor="productOneColorTwo"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productOneSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productOneSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productOneSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productOneSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productOneSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productOneSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productOneSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productOneSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productOneSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productOneSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productOneSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productOneSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productOneSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productOneSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productOneSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -231,34 +267,34 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productTwoColorOne" name="productTwoColor" className="custom-control-input" checked />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productTwoImg" data-slide="0" style={{color: "red"}} for="productTwoColorOne"></label>
+															<input type="radio" id="productTwoColorOne" name="productTwoColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productTwoImg" data-slide="0" style={{color: "red"}} htmlFor="productTwoColorOne"></label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-color ml-n2">
 															<input type="radio" id="productTwoColorTwo" name="productTwoColor" className="custom-control-input" />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productTwoImg" data-slide="1" style={{color: "white"}} for="productTwoColorTwo"></label>
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productTwoImg" data-slide="1" style={{color: "white"}} htmlFor="productTwoColorTwo"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productTwoSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productTwoSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productTwoSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productTwoSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productTwoSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productTwoSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productTwoSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productTwoSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productTwoSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productTwoSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productTwoSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productTwoSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productTwoSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productTwoSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productTwoSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -322,30 +358,30 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productThreeColorOne" name="productThreeColor" className="custom-control-input" checked />
-															<label className="custom-control-label" style={{color: "#f9f9f9"}} for="productThreeColorOne"></label>
+															<input type="radio" id="productThreeColorOne" name="productThreeColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" style={{color: "#f9f9f9"}} htmlFor="productThreeColorOne"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productThreeSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productThreeSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productThreeSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productThreeSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productThreeSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productThreeSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productThreeSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productThreeSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productThreeSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productThreeSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productThreeSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productThreeSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productThreeSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productThreeSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productThreeSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -401,30 +437,30 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productFourColorOne" name="productFourColor" className="custom-control-input" checked />
-															<label className="custom-control-label" style={{color: "#f9f9f9"}} for="productFourColorOne"></label>
+															<input type="radio" id="productFourColorOne" name="productFourColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" style={{color: "#f9f9f9"}} htmlFor="productFourColorOne"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFourSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFourSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productFourSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFourSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFourSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productFourSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFourSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFourSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productFourSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFourSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFourSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productFourSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFourSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFourSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productFourSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -480,30 +516,30 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productFiveColorOne" name="productFiveColor" className="custom-control-input" checked />
-															<label className="custom-control-label" style={{color: "yellow"}} for="productFiveColorOne"></label>
+															<input type="radio" id="productFiveColorOne" name="productFiveColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" style={{color: "yellow"}} htmlFor="productFiveColorOne"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFiveSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFiveSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productFiveSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFiveSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFiveSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productFiveSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFiveSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFiveSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productFiveSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFiveSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFiveSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productFiveSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productFiveSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productFiveSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productFiveSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -574,34 +610,34 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productSixColorOne" name="productSixColor" className="custom-control-input" checked />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productSixImg" data-slide="0" style={{color: "beige"}} for="productSixColorOne"></label>
+															<input type="radio" id="productSixColorOne" name="productSixColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productSixImg" data-slide="0" style={{color: "beige"}} htmlFor="productSixColorOne"></label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-color ml-n2">
 															<input type="radio" id="productSixColorTwo" name="productSixColor" className="custom-control-input" />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productSixImg" data-slide="1" style={{color: "black"}} for="productSixColorTwo"></label>
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productSixImg" data-slide="1" style={{color: "black"}} htmlFor="productSixColorTwo"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSixSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSixSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productSixSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSixSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSixSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productSixSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSixSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSixSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productSixSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSixSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSixSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productSixSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSixSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSixSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productSixSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -657,30 +693,30 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productSevenColorOne" name="productSevenColor" className="custom-control-input" checked />
-															<label className="custom-control-label" style={{color: "black"}} for="productSevenColorOne"></label>
+															<input type="radio" id="productSevenColorOne" name="productSevenColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" style={{color: "black"}} htmlFor="productSevenColorOne"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSevenSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSevenSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productSevenSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSevenSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSevenSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productSevenSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSevenSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSevenSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productSevenSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSevenSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSevenSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productSevenSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productSevenSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productSevenSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productSevenSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -748,34 +784,34 @@ export default class HomePage extends Component{
 												<form>
 													<div className="mb-1">
 														<div className="custom-control custom-control-inline custom-control-color">
-															<input type="radio" id="productEightColorOne" name="productEightColor" className="custom-control-input" checked />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productEightImg" data-slide="0" style={{color: "black"}} for="productEightColorOne"></label>
+															<input type="radio" id="productEightColorOne" name="productEightColor" className="custom-control-input" defaultChecked />
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productEightImg" data-slide="0" style={{color: "black"}} htmlFor="productEightColorOne"></label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-color ml-n2">
 															<input type="radio" id="productEightColorTwo" name="productEightColor" className="custom-control-input" />
-															<label className="custom-control-label" data-toggle="flickity" data-target="#productEightImg" data-slide="1" style={{color: "red"}} for="productEightColorTwo"></label>
+															<label className="custom-control-label" data-toggle="flickity" data-target="#productEightImg" data-slide="1" style={{color: "red"}} htmlFor="productEightColorTwo"></label>
 														</div>
 													</div>
 													<div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productEightSizeOne" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productEightSizeOne">6</label>
+															<label className="custom-control-label" htmlFor="productEightSizeOne">6</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productEightSizeTwo" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productEightSizeTwo">6.5</label>
+															<label className="custom-control-label" htmlFor="productEightSizeTwo">6.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productEightSizeThree" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productEightSizeThree">7</label>
+															<label className="custom-control-label" htmlFor="productEightSizeThree">7</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productEightSizeFour" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productEightSizeFour">7.5</label>
+															<label className="custom-control-label" htmlFor="productEightSizeFour">7.5</label>
 														</div>
 														<div className="custom-control custom-control-inline custom-control-text font-size-xs">
 															<input type="radio" id="productEightSizeFive" name="sizeRadio" className="custom-control-input" />
-															<label className="custom-control-label" for="productEightSizeFive">8.5</label>
+															<label className="custom-control-label" htmlFor="productEightSizeFive">8.5</label>
 														</div>
 													</div>
 												</form>
@@ -1428,168 +1464,7 @@ export default class HomePage extends Component{
 					</div>
 				</section>
 
-				{/* <!-- FOOTER --> */}
-				<footer className="bg-dark bg-cover @@classList" style={{backgroundImage: "url(./assets/img/patterns/pattern-2.svg)"}}>
-					<div className="py-12 border-bottom border-gray-700">
-						<div className="container">
-							<div className="row">
-								<div className="col-12 col-md-3">
-
-									{/* <!-- Heading --> */}
-									<h4 className="mb-6 text-white">Shopper.</h4>
-
-									{/* <!-- Social --> */}
-									<ul className="list-unstyled list-inline mb-7 mb-md-0 text-gray-350">
-										<li className="list-inline-item">
-											<a href="#!" className="text-reset">
-												<i className="fab fa-facebook-f"></i>
-											</a>
-										</li>
-										<li className="list-inline-item">
-											<a href="#!" className="text-reset">
-												<i className="fab fa-youtube"></i>
-											</a>
-										</li>
-										<li className="list-inline-item">
-											<a href="#!" className="text-reset">
-												<i className="fab fa-twitter"></i>
-											</a>
-										</li>
-										<li className="list-inline-item">
-											<a href="#!" className="text-reset">
-												<i className="fab fa-instagram"></i>
-											</a>
-										</li>
-										<li className="list-inline-item">
-											<a href="#!" className="text-reset">
-												<i className="fab fa-medium"></i>
-											</a>
-										</li>
-									</ul>
-
-								</div>
-								<div className="col-6 col-sm">
-
-									{/* <!-- Heading --> */}
-									<h6 className="heading-xxs mb-4 text-white">
-										Support
-									</h6>
-
-									{/* <!-- Links --> */}
-									<ul className="list-unstyled mb-7 mb-sm-0">
-										<li>
-											<a className="text-gray-300" href="./contact-us.html">Contact Us</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="./faq.html">FAQs</a>
-										</li>
-										<li>
-											<a className="text-gray-300" data-toggle="modal" href="#modalSizeChart">Size Guide</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="./shipping-and-returns.html">Shipping & Returns</a>
-										</li>
-									</ul>
-
-								</div>
-								<div className="col-6 col-sm">
-
-									{/* <!-- Heading --> */}
-									<h6 className="heading-xxs mb-4 text-white">
-										Shop
-									</h6>
-
-									{/* <!-- Links --> */}
-									<ul className="list-unstyled mb-7 mb-sm-0">
-										<li>
-											<a className="text-gray-300" href="./shop.html">Men's Shopping</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="./shop.html">Women's Shopping</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="./shop.html">Kids' Shopping</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="./shop.html">Discounts</a>
-										</li>
-									</ul>
-
-								</div>
-								<div className="col-6 col-sm">
-
-									{/* <!-- Heading --> */}
-									<h6 className="heading-xxs mb-4 text-white">
-										Company
-									</h6>
-
-									{/* <!-- Links --> */}
-									<ul className="list-unstyled mb-0">
-										<li>
-											<a className="text-gray-300" href="./about.html">Our Story</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="#!">Careers</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="#!">Terms & Conditions</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="#!">Privacy & Cookie policy</a>
-										</li>
-									</ul>
-
-								</div>
-								<div className="col-6 col-sm">
-
-									{/* <!-- Heading --> */}
-									<h6 className="heading-xxs mb-4 text-white">
-										Contact
-									</h6>
-
-									{/* <!-- Links --> */}
-									<ul className="list-unstyled mb-0">
-										<li>
-											<a className="text-gray-300" href="#!">1-202-555-0105</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="#!">1-202-555-0106</a>
-										</li>
-										<li>
-											<a className="text-gray-300" href="#!">help@shopper.com</a>
-										</li>
-									</ul>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<div className="py-6">
-						<div className="container">
-							<div className="row">
-								<div className="col">
-
-									{/* <!-- Copyright --> */}
-									<p className="mb-3 mb-md-0 font-size-xxs text-muted">
-										© 2019 All rights reserved. Designed by Unvab.
-									</p>
-
-								</div>
-								<div className="col-auto">
-
-									{/* <!-- Payment methods --> */}
-									<img className="footer-payment" src="./assets/img/payment/mastercard.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/visa.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/amex.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/paypal.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/maestro.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/klarna.svg" alt="..." />
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</footer>
+				<Footer />
 			</div>
     )
   }
