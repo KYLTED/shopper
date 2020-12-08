@@ -13,17 +13,17 @@ export default class AccountAddressPage extends Component{
 
 				
 				{/* <!-- BREADCRUMB --> */}
-				<nav class="py-5">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+				<nav className="py-5">
+					<div className="container">
+						<div className="row">
+							<div className="col-12">
 
 								{/* <!-- Breadcrumb --> */}
-								<ol class="breadcrumb mb-0 font-size-xs text-gray-400">
-									<li class="breadcrumb-item">
-										<a class="text-gray-400" href="index.html">Home</a>
+								<ol className="breadcrumb mb-0 font-size-xs text-gray-400">
+									<li className="breadcrumb-item">
+										<a className="text-gray-400" href="index.html">Home</a>
 									</li>
-									<li class="breadcrumb-item active">
+									<li className="breadcrumb-item active">
 										My Account
 									</li>
 								</ol>
@@ -34,21 +34,21 @@ export default class AccountAddressPage extends Component{
 				</nav>
 
 				{/* <!-- CONTENT --> */}
-				<section class="pt-7 pb-12">
-					<div class="container">
-						<div class="row">
-							<div class="col-12 text-center">
+				<section className="pt-7 pb-12">
+					<div className="container">
+						<div className="row">
+							<div className="col-12 text-center">
 
 								{/* <!-- Heading --> */}
-								<h3 class="mb-10">My Account</h3>
+								<h3 className="mb-10">My Account</h3>
 
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-12 col-md-3">
+						<div className="row">
+							<div className="col-12 col-md-3">
 
-								<nav class="mb-10 mb-md-0">
-									<div class="list-group list-group-sm list-group-strong list-group-flush-x">
+								<nav className="mb-10 mb-md-0">
+									<div className="list-group list-group-sm list-group-strong list-group-flush-x">
 										<Link className="list-group-item list-group-item-action dropright-toggle" to="account-orders">
 											Orders
 										</Link>
@@ -72,21 +72,21 @@ export default class AccountAddressPage extends Component{
 
 
 							</div>
-							<div class="col-12 col-md-9 col-lg-8 offset-lg-1">
-								<div class="row">
-									<div class="col-12 col-lg-6">
+							<div className="col-12 col-md-9 col-lg-8 offset-lg-1">
+								<div className="row">
+									<div className="col-12 col-lg-6">
 
 										{/* <!-- Card --> */}
-										<div class="card card-lg bg-light mb-8">
-											<div class="card-body">
+										<div className="card card-lg bg-light mb-8">
+											<div className="card-body">
 
 												{/* <!-- Heading --> */}
-												<h6 class="mb-6">
+												<h6 className="mb-6">
 													Shipping Address
 												</h6>
 
 												{/* <!-- Text --> */}
-												<p class="text-muted mb-0">
+												<p className="text-muted mb-0">
 													Daniel Robinson <br/>
 													3997 Raccoon Run <br/>
 													Kingston <br/>
@@ -96,16 +96,16 @@ export default class AccountAddressPage extends Component{
 												</p>
 
 												{/* <!-- Action --> */}
-												<div class="card-action card-action-right">
+												<div className="card-action card-action-right">
 
 													{/* <!-- Button --> */}
-													<a class="btn btn-xs btn-circle btn-white-primary" href="account-address-edit.html">
-														<i class="fe fe-edit-2"></i>
+													<a className="btn btn-xs btn-circle btn-white-primary" href="account-address-edit.html">
+														<i className="fe fe-edit-2"></i>
 													</a>
 
 													{/* <!-- Button --> */}
-													<button class="btn btn-xs btn-circle btn-white-primary">
-														<i class="fe fe-x"></i>
+													<button className="btn btn-xs btn-circle btn-white-primary">
+														<i className="fe fe-x"></i>
 													</button>
 
 												</div>
@@ -114,19 +114,19 @@ export default class AccountAddressPage extends Component{
 										</div>
 
 									</div>
-									<div class="col-12 col-lg-6">
+									<div className="col-12 col-lg-6">
 
 										{/* <!-- Card --> */}
-										<div class="card card-lg bg-light mb-8">
-											<div class="card-body">
+										<div className="card card-lg bg-light mb-8">
+											<div className="card-body">
 
 												{/* <!-- Heading --> */}
-												<h6 class="mb-6">
+												<h6 className="mb-6">
 													Billing Address
 												</h6>
 
 												{/* <!-- Text --> */}
-												<p class="text-muted mb-0">
+												<p className="text-muted mb-0">
 													Daniel Robinson <br/>
 													3997 Raccoon Run <br/>
 													Kingston <br/>
@@ -136,16 +136,16 @@ export default class AccountAddressPage extends Component{
 												</p>
 
 												{/* <!-- Action --> */}
-												<div class="card-action card-action-right">
+												<div className="card-action card-action-right">
 
 													{/* <!-- Button --> */}
-													<a class="btn btn-xs btn-circle btn-white-primary" href="account-address-edit.html">
-														<i class="fe fe-edit-2"></i>
+													<a className="btn btn-xs btn-circle btn-white-primary" href="account-address-edit.html">
+														<i className="fe fe-edit-2"></i>
 													</a>
 
 													{/* <!-- Button --> */}
-													<button class="btn btn-xs btn-circle btn-white-primary">
-														<i class="fe fe-x"></i>
+													<button className="btn btn-xs btn-circle btn-white-primary">
+														<i className="fe fe-x"></i>
 													</button>
 
 												</div>
@@ -154,11 +154,11 @@ export default class AccountAddressPage extends Component{
 										</div>
 
 									</div>
-									<div class="col-12">
+									<div className="col-12">
 
 										{/* <!-- Button --> */}
-										<a class="btn btn-block btn-lg btn-outline-border" href="account-address-edit.html">
-											Add Address <i class="fe fe-plus"></i>
+										<a className="btn btn-block btn-lg btn-outline-border" href="account-address-edit.html">
+											Add Address <i className="fe fe-plus"></i>
 										</a>
 
 									</div>

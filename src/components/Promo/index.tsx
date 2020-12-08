@@ -4,14 +4,14 @@ export default class Promo extends Component{
     return (
 			<div className="promo">
 				{/* <!-- PROMO --> */}
-				<div class="py-3 bg-dark bg-pattern @@classList">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+				<div className="py-3 bg-dark bg-pattern @@classList">
+					<div className="container">
+						<div className="row">
+							<div className="col-12">
 
 								{/* <!-- Text --> */}
-								<div class="text-center text-white">
-									<span class="heading-xxs letter-spacing-xl">
+								<div className="text-center text-white">
+									<span className="heading-xxs letter-spacing-xl">
 										⚡️ Happy Holiday Deals on Everything ⚡️
 									</span>
 								</div>

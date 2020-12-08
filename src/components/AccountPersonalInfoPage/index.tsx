@@ -12,17 +12,17 @@ export default class AccountPersonalInfoPage extends Component{
 				<Navbar />
 
 				{/* <!-- BREADCRUMB --> */}
-				<nav class="py-5">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
+				<nav className="py-5">
+					<div className="container">
+						<div className="row">
+							<div className="col-12">
 
 								{/* <!-- Breadcrumb --> */}
-								<ol class="breadcrumb mb-0 font-size-xs text-gray-400">
-									<li class="breadcrumb-item">
-										<a class="text-gray-400" href="index.html">Home</a>
+								<ol className="breadcrumb mb-0 font-size-xs text-gray-400">
+									<li className="breadcrumb-item">
+										<a className="text-gray-400" href="index.html">Home</a>
 									</li>
-									<li class="breadcrumb-item active">
+									<li className="breadcrumb-item active">
 										My Account
 									</li>
 								</ol>
@@ -33,22 +33,22 @@ export default class AccountPersonalInfoPage extends Component{
 				</nav>
 
 				{/* <!-- CONTENT --> */}
-				<section class="pt-7 pb-12">
-					<div class="container">
-						<div class="row">
-							<div class="col-12 text-center">
+				<section className="pt-7 pb-12">
+					<div className="container">
+						<div className="row">
+							<div className="col-12 text-center">
 
 								{/* <!-- Heading --> */}
-								<h3 class="mb-10">My Account</h3>
+								<h3 className="mb-10">My Account</h3>
 
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-12 col-md-3">
+						<div className="row">
+							<div className="col-12 col-md-3">
 
 								{/* <!-- Nav --> */}
-								<nav class="mb-10 mb-md-0">
-									<div class="list-group list-group-sm list-group-strong list-group-flush-x">
+								<nav className="mb-10 mb-md-0">
+									<div className="list-group list-group-sm list-group-strong list-group-flush-x">
 										<Link className="list-group-item list-group-item-action dropright-toggle" to="account-orders">
 											Orders
 										</Link>
@@ -72,109 +72,109 @@ export default class AccountPersonalInfoPage extends Component{
 
 
 							</div>
-							<div class="col-12 col-md-9 col-lg-8 offset-lg-1">
+							<div className="col-12 col-md-9 col-lg-8 offset-lg-1">
 
 								{/* <!-- Form --> */}
 								<form>
-									<div class="row">
-										<div class="col-12 col-md-6">
+									<div className="row">
+										<div className="col-12 col-md-6">
 
 											{/* <!-- Email --> */}
-											<div class="form-group">
-												<label for="accountFirstName">
+											<div className="form-group">
+												<label htmlFor="accountFirstName">
 													First Name *
 												</label>
-												<input class="form-control form-control-sm" id="accountFirstName" type="text" placeholder="First Name *" value="Daniel" required />
+												<input className="form-control form-control-sm" id="accountFirstName" type="text" placeholder="First Name *" value="Daniel" required />
 											</div>
 
 										</div>
-										<div class="col-12 col-md-6">
+										<div className="col-12 col-md-6">
 
 											{/* <!-- Email --> */}
-											<div class="form-group">
-												<label for="accountLastName">
+											<div className="form-group">
+												<label htmlFor="accountLastName">
 													Last Name *
 												</label>
-												<input class="form-control form-control-sm" id="accountLastName" type="text" placeholder="Last Name *" value="Robinson" required />
+												<input className="form-control form-control-sm" id="accountLastName" type="text" placeholder="Last Name *" value="Robinson" required />
 											</div>
 
 										</div>
-										<div class="col-12">
+										<div className="col-12">
 
 											{/* <!-- Email --> */}
-											<div class="form-group">
-												<label for="accountEmail">
+											<div className="form-group">
+												<label htmlFor="accountEmail">
 													Email Address *
 												</label>
-												<input class="form-control form-control-sm" id="accountEmail" type="email" placeholder="Email Address *" value="user@email.com" required />
+												<input className="form-control form-control-sm" id="accountEmail" type="email" placeholder="Email Address *" value="user@email.com" required />
 											</div>
 
 										</div>
-										<div class="col-12 col-md-6">
+										<div className="col-12 col-md-6">
 
 											{/* <!-- Password --> */}
-											<div class="form-group">
-												<label for="accountPassword">
+											<div className="form-group">
+												<label htmlFor="accountPassword">
 													Current Password *
 												</label>
-												<input class="form-control form-control-sm" id="accountPassword" type="password" placeholder="Current Password *" required />
+												<input className="form-control form-control-sm" id="accountPassword" type="password" placeholder="Current Password *" required />
 											</div>
 
 										</div>
-										<div class="col-12 col-md-6">
+										<div className="col-12 col-md-6">
 
 											{/* <!-- Password --> */}
-											<div class="form-group">
-												<label for="AccountNewPassword">
+											<div className="form-group">
+												<label htmlFor="AccountNewPassword">
 													New Password *
 												</label>
-												<input class="form-control form-control-sm" id="AccountNewPassword" type="password" placeholder="New Password *" required />
+												<input className="form-control form-control-sm" id="AccountNewPassword" type="password" placeholder="New Password *" required />
 											</div>
 
 										</div>
-										<div class="col-12 col-lg-6">
+										<div className="col-12 col-lg-6">
 
 											{/* <!-- Birthday --> */}
-											<div class="form-group">
+											<div className="form-group">
 
 												{/* <!-- Label --> */}
 												<label>Date of Birth</label>
 
 												{/* <!-- Inputs --> */}
-												<div class="form-row">
-													<div class="col-auto">
+												<div className="form-row">
+													<div className="col-auto">
 
 														{/* <!-- Date --> */}
-														<label class="sr-only" for="accountDate">
+														<label className="sr-only" htmlFor="accountDate">
 															Date
 														</label>
-														<select class="custom-select custom-select-sm" id="accountDate">
+														<select className="custom-select custom-select-sm" id="accountDate">
 															<option>10</option>
 															<option>11</option>
 															<option selected>12</option>
 														</select>
 
 													</div>
-													<div class="col">
+													<div className="col">
 
 														{/* <!-- Date --> */}
-														<label class="sr-only" for="accountMonth">
+														<label className="sr-only" htmlFor="accountMonth">
 															Month
 														</label>
-														<select class="custom-select custom-select-sm" id="accountMonth">
+														<select className="custom-select custom-select-sm" id="accountMonth">
 															<option>January</option>
 															<option selected>February</option>
 															<option>March</option>
 														</select>
 
 													</div>
-													<div class="col-auto">
+													<div className="col-auto">
 
 														{/* <!-- Date --> */}
-														<label class="sr-only" for="accountYear">
+														<label className="sr-only" htmlFor="accountYear">
 															Year
 														</label>
-														<select class="custom-select custom-select-sm" id="accountYear">
+														<select className="custom-select custom-select-sm" id="accountYear">
 															<option>1990</option>
 															<option selected>1991</option>
 															<option>1992</option>
@@ -186,26 +186,26 @@ export default class AccountPersonalInfoPage extends Component{
 											</div>
 
 										</div>
-										<div class="col-12 col-lg-6">
+										<div className="col-12 col-lg-6">
 
 											{/* <!-- Gender --> */}
-											<div class="form-group mb-8">
+											<div className="form-group mb-8">
 												<label>Gender</label>
-												<div class="btn-group-toggle" data-toggle="buttons">
-													<label class="btn btn-sm btn-outline-border active">
-														<input type="radio" name="gender" checked /> Male
+												<div className="btn-group-toggle" data-toggle="buttons">
+													<label className="btn btn-sm btn-outline-border active">
+														<input type="radio" name="gender" defaultChecked /> Male
 													</label>
-													<label class="btn btn-sm btn-outline-border">
+													<label className="btn btn-sm btn-outline-border">
 														<input type="radio" name="gender" /> Female
 													</label>
 												</div>
 											</div>
 
 										</div>
-										<div class="col-12">
+										<div className="col-12">
 
 											{/* <!-- Button --> */}
-											<button class="btn btn-dark" type="submit">Save Changes</button>
+											<button className="btn btn-dark" type="submit">Save Changes</button>
 
 										</div>
 									</div>

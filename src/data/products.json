@@ -7,7 +7,17 @@
 			"product-120.jpg",
 			"product-5.jpg"
 		],
-		"is_new": true
+		"is_new": true,
+		"filter": {
+			"category":{
+				"type":[1]
+			},
+			"season":[1],
+			"size":[1],
+			"color":[1],
+			"brand":[1],
+			"price":[3]
+		}
 	},
 	{
 		"name": "Cotton floral print Dress",
@@ -16,7 +26,17 @@
 		"pictures": [
 			"product-121.jpg",
 			"product-6.jpg"
-		]
+		],
+		"filter": {
+			"category":{
+				"type":[2]
+			},
+			"season":[3],
+			"size":[2],
+			"color":[1, 2, 3, 4],
+			"brand":[1, 2, 3, 4],
+			"price":[1]
+		}
 	},
 	{
 		"name": "Leather Sneakers",
@@ -27,7 +47,17 @@
 			"product-122.jpg",
 			"product-7.jpg"
 		],
-		"is_sale": true
+		"is_sale": true,
+		"filter": {
+			"category":{
+				"type":[1]
+			},
+			"season":[4],
+			"size":[2, 3, 4, 5],
+			"color":[3],
+			"brand":[2],
+			"price":[2]
+		}
 	},
 	{
 		"name": "Cropped cotton Top",
@@ -35,7 +65,17 @@
 		"price": 29.0,
 		"pictures": [
 			"product-8.jpg"
-		]
+		],
+		"filter": {
+			"category":{
+				"type":[3]
+			},
+			"season":[4],
+			"size":[2, 3, 4, 5, 6, 7],
+			"color":[3],
+			"brand":[3],
+			"price":[1]
+		}
 	},
 	{
 		"name": "Floral print midi Dress",
@@ -43,7 +83,17 @@
 		"price": 50.0,
 		"pictures": [
 			"product-9.jpg"
-		]
+		],
+		"filter": {
+			"category":{
+				"type":[2]
+			},
+			"season":[1],
+			"size":[2, 5],
+			"color":[3, 4],
+			"brand":[4],
+			"price":[2]
+		}
 	},
 	{
 		"name": "Suede cross body Bag",
@@ -54,7 +104,17 @@
 			"product-123.jpg",
 			"product-10.jpg"
 		],
-		"is_sale": true
+		"is_sale": true,
+		"filter": {
+			"category":{
+				"type":[4]
+			},
+			"season":[1],
+			"size":[2, 5, 6],
+			"color":[2],
+			"brand":[2, 3],
+			"price":[1]
+		}
 	},
 	{
 		"name": "Printed A-line Skirt",
@@ -63,7 +123,17 @@
 		"pictures": [
 			"product-124.jpg",
 			"product-11.jpg"
-		]
+		],
+		"filter": {
+			"category":{
+				"type":[5]
+			},
+			"season":[3, 2],
+			"size":[3, 6, 9],
+			"color":[2],
+			"brand":[1],
+			"price":[2]
+		}
 	},
 	{
 		"name": "Heel strappy Sandals",
@@ -72,6 +142,16 @@
 		"pictures": [
 			"product-12.jpg"
 		],
-		"is_new": true
+		"is_new": true,
+		"filter": {
+			"category":{
+				"type":[1]
+			},
+			"season":[1, 3],
+			"size":[2, 6],
+			"color":[1, 2, 3, 4],
+			"brand":[1, 2, 3, 4],
+			"price":[2]
+		}
 	}
 ]
