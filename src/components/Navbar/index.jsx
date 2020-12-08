@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 
 import { Link } from "react-router-dom"
+import Logo from "../../assets/img/logo.png";
 
 export default class Navbar extends Component{
   render(){
@@ -119,7 +120,7 @@ export default class Navbar extends Component{
 
 						{/* <!-- Brand --> */}
 						<Link className="navbar-brand" to="/">
-							Shopper.
+							<img src={Logo} className="nav-logo"/>
 						</Link>
 
 						{/* <!-- Toggler --> */}
@@ -361,19 +362,29 @@ export default class Navbar extends Component{
 														{/* <!-- Links --> */}
 														<ul className="list-styled mb-7 font-size-sm">
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="./shop.html">Default</a>
+																<Link className="list-styled-link" to="/shop">
+																	Link A
+																</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="./shop-topbar.html">Topbar</a>
+																<Link className="list-styled-link" to="/shop">
+																	Link B
+																</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="./shop-collapse.html">Collapse</a>
+																<Link className="list-styled-link" to="/shop">
+																	Link C
+																</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="./shop-simple.html">Simple</a>
+																<Link className="list-styled-link" to="/shop">
+																	Link D
+																</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="./shop-masonry.html">Masonry</a>
+																<Link className="list-styled-link" to="/shop">
+																	Link E
+																</Link>
 															</li>
 														</ul>
 

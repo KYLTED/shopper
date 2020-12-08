@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';
 import AccountOrdersPage from './components/AccountOrdersPage';
+import AccountOrderPage from './components/AccountOrderPage';
 import AccountWishListPage from './components/AccountWishListPage';
 import AccountPersonalInfoPage from './components/AccountPersonalInfoPage';
 import AccountAddressPage from './components/AccountAddressPage';
 import AccountPaymentPage from './components/AccountPaymentPage';
+import ShopPage from './components/ShopPage';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -25,9 +27,15 @@ ReactDOM.render(
 				<Route path="/login">
 					<LoginPage />
 				</Route>
+				<Route path="/shop">
+					<ShopPage />
+				</Route>
 				{/* Account pages */}
 					<Route path="/account-orders">
 						<AccountOrdersPage />
+					</Route>
+					<Route path="/account-order">
+						<AccountOrderPage />
 					</Route>
 					<Route path="/account-wishlist">
 						<AccountWishListPage />

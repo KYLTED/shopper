@@ -3,43 +3,32 @@ import React, {Component} from 'react'
 import Navbar from "../Navbar"
 import Footer from '../Footer'
 
+import Promo from '../Promo'
+
 export default class HomePage extends Component{
 	componentDidMount(){
 		let scripts = [
 			"./assets/js/theme.min.js",
 			"./assets/libs/flickity/dist/flickity.pkgd.min.js",
-			"./assets/libs/flickity-fade/flickity-fade.js"
+			"./assets/libs/flickity-fade/flickity-fade.js",
 		]
 
-		scripts.forEach(src => {
-			const script = document.createElement("script");
-			script.src = src;
-			script.async = true;
-	
-			document.body.appendChild(script);
-		})
+		setTimeout(() => {
+			scripts.forEach(src => {
+				const script = document.createElement("script");
+				script.src = src;
+				script.async = true;
+		
+				document.body.appendChild(script);
+			})
+		}, 2000);
 	}
   render(){
     return (
 			<div className="homepage"> 
 				<Navbar />
+				<Promo />
 
-				{/* <!-- PROMO --> */}
-				<div className="py-3 bg-dark bg-pattern mb-4">
-						<div className="container">
-							<div className="row">
-								<div className="col-12">
-									{/* <!-- Text --> */}
-									<div className="text-center text-white">
-										<span className="heading-xxs letter-spacing-xl">
-											⚡️ Happy Holiday Deals on Everything ⚡️
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-				</div>
-				
 				{/* <!-- WELCOME --> */}
 				<section className="position-relative mb-4 py-13">
 					{/* <!-- Cover --> */}
@@ -1087,180 +1076,6 @@ export default class HomePage extends Component{
 								{/* <!-- Link  --> */}
 								<div className="mt-10 text-center">
 									<a className="link-underline" href="shop.html">Discover more</a>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</section>
-
-				{/* <!-- NEW ARRIVAL --> */}
-				<section>
-					<div className="container py-12 border-bottom">
-						<div className="row">
-							<div className="col-12">
-
-								{/* <!-- Heading --> */}
-								<h2 className="mb-10 text-center">New Arrivals</h2>
-
-								{/* <!-- Slider--> */}
-								<div className="flickity-buttons-lg flickity-buttons-offset px-lg-12" data-flickity='{"prevNextButtons": true}'>
-
-									{/* <!-- Card --> */}
-									<div className="card col-12 col-md-4 mb-10">
-
-										{/* <!-- Image --> */}
-										<a href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-26.jpg" alt="..." />
-										</a>
-
-										{/* <!-- Body --> */}
-										<div className="card-body px-0">
-											<div className="d-flex">
-
-												{/* <!-- Caption --> */}
-												<div className="mr-auto">
-
-													{/* <!-- Heading --> */}
-													<div className="font-weight-bold">
-														<a className="text-body" href="product.html">Striped knit Top</a>
-													</div>
-
-													{/* <!-- Text --> */}
-													<div className="font-size-sm">
-														<a className="text-muted" href="shop.html">Tops</a>
-													</div>
-
-												</div>
-
-												{/* <!-- Price --> */}
-												<div className="font-size-sm font-weight-bold text-muted">
-													$39.00
-												</div>
-
-											</div>
-										</div>
-
-									</div>
-
-									{/* <!-- Card --> */}
-									<div className="card col-12 col-md-4 mb-10">
-
-										{/* <!-- Image --> */}
-										<a href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-25.jpg" alt="..." />
-										</a>
-
-										{/* <!-- Body --> */}
-										<div className="card-body px-0">
-											<div className="d-flex">
-
-												{/* <!-- Caption --> */}
-												<div className="mr-auto">
-
-													{/* <!-- Heading --> */}
-													<div className="font-weight-bold">
-														<a className="text-body" href="product.html">Floral print Dress</a>
-													</div>
-
-													{/* <!-- Text --> */}
-													<div className="font-size-sm">
-														<a className="text-muted" href="shop.html">Dress</a>
-													</div>
-
-												</div>
-
-												{/* <!-- Price --> */}
-												<div className="font-size-sm font-weight-bold text-muted">
-													$60.00
-												</div>
-
-											</div>
-										</div>
-
-									</div>
-
-									{/* <!-- Card --> */}
-									<div className="card col-12 col-md-4 mb-10">
-
-										{/* <!-- Image --> */}
-										<a href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-28.jpg" alt="..." />
-										</a>
-
-										{/* <!-- Body --> */}
-										<div className="card-body px-0">
-											<div className="d-flex">
-
-												{/* <!-- Caption --> */}
-												<div className="mr-auto">
-
-													{/* <!-- Heading --> */}
-													<div className="font-weight-bold">
-														<a className="text-body" href="product.html">Straight Trousers with Belt</a>
-													</div>
-
-													{/* <!-- Text --> */}
-													<div className="font-size-sm">
-														<a className="text-muted" href="shop.html">Trousers</a>
-													</div>
-
-												</div>
-
-												{/* <!-- Price --> */}
-												<div className="font-size-sm font-weight-bold text-muted">
-													$79.00
-												</div>
-
-											</div>
-										</div>
-
-									</div>
-
-									{/* <!-- Card --> */}
-									<div className="card col-12 col-md-4 mb-10">
-
-										{/* <!-- Image --> */}
-										<a href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-27.jpg" alt="..." />
-										</a>
-
-										{/* <!-- Body --> */}
-										<div className="card-body px-0">
-											<div className="d-flex">
-
-												{/* <!-- Caption --> */}
-												<div className="mr-auto">
-
-													{/* <!-- Heading --> */}
-													<div className="font-weight-bold">
-														<a className="text-body" href="product.html">Fine quality jeans</a>
-													</div>
-
-													{/* <!-- Text --> */}
-													<div className="font-size-sm text-muted">
-														<a className="text-muted" href="shop.html">Trousers</a>
-													</div>
-
-												</div>
-
-												{/* <!-- Price --> */}
-												<div className="font-size-sm font-weight-bold text-muted">
-													$69.00
-												</div>
-
-											</div>
-										</div>
-
-									</div>
-
-								</div>
-
-								{/* <!-- Button --> */}
-								<div className="text-center">
-									<a className="btn btn-dark" href="shop.html">
-										Shop Now <i className="fe fe-arrow-right ml-2"></i>
-									</a>
 								</div>
 
 							</div>

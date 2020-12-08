@@ -174,10 +174,9 @@ export default class AccountOrdersPage extends Component{
 													<div class="col-6">
 
 														{/* <!-- Button --> */}
-														<a class="btn btn-sm btn-block btn-outline-dark" href="account-order.html">
+														<Link className="btn btn-sm btn-block btn-outline-dark" to="account-order">
 															Order Details
-														</a>
-
+														</Link>
 													</div>
 													<div class="col-6">
 
@@ -270,9 +269,9 @@ export default class AccountOrdersPage extends Component{
 													<div class="col-6">
 
 														{/* <!-- Button --> */}
-														<a class="btn btn-sm btn-block btn-outline-dark" href="account-order.html">
+														<Link className="btn btn-sm btn-block btn-outline-dark" to="account-order">
 															Order Details
-														</a>
+														</Link>
 
 													</div>
 													<div class="col-6">
@@ -372,9 +371,9 @@ export default class AccountOrdersPage extends Component{
 													<div class="col-6">
 
 														{/* <!-- Button --> */}
-														<a class="btn btn-sm btn-block btn-outline-dark" href="account-order.html">
+														<Link className="btn btn-sm btn-block btn-outline-dark" to="account-order">
 															Order Details
-														</a>
+														</Link>
 
 													</div>
 													<div class="col-6">

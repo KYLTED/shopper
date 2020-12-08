@@ -1,0 +1,77 @@
+[
+	{
+		"name": "Leather mid-heel Sandals",
+		"type": 1,
+		"price": 129.0,
+		"pictures": [
+			"product-120.jpg",
+			"product-5.jpg"
+		],
+		"is_new": true
+	},
+	{
+		"name": "Cotton floral print Dress",
+		"type": 2,
+		"price": 40.0,
+		"pictures": [
+			"product-121.jpg",
+			"product-6.jpg"
+		]
+	},
+	{
+		"name": "Leather Sneakers",
+		"type": 1,
+		"price": 85.0,
+		"old_price": 100.0,
+		"pictures": [
+			"product-122.jpg",
+			"product-7.jpg"
+		],
+		"is_sale": true
+	},
+	{
+		"name": "Cropped cotton Top",
+		"type": 3,
+		"price": 29.0,
+		"pictures": [
+			"product-8.jpg"
+		]
+	},
+	{
+		"name": "Floral print midi Dress",
+		"type": 2,
+		"price": 50.0,
+		"pictures": [
+			"product-9.jpg"
+		]
+	},
+	{
+		"name": "Suede cross body Bag",
+		"type": 4,
+		"price": 49.0,
+		"old_price": 79.0,
+		"pictures": [
+			"product-123.jpg",
+			"product-10.jpg"
+		],
+		"is_sale": true
+	},
+	{
+		"name": "Printed A-line Skirt",
+		"type": 5,
+		"price": 79.0,
+		"pictures": [
+			"product-124.jpg",
+			"product-11.jpg"
+		]
+	},
+	{
+		"name": "Heel strappy Sandals",
+		"type": 1,
+		"price": 90.0,
+		"pictures": [
+			"product-12.jpg"
+		],
+		"is_new": true
+	}
+]
