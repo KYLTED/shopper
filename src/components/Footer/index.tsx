@@ -54,16 +54,16 @@ export default class Footer extends Component{
 									{/* <!-- Links --> */}
 									<ul className="list-unstyled mb-7 mb-sm-0">
 										<li>
-											<a className="text-gray-300" href="./contact-us.html">Contact Us</a>
+											<a className="text-gray-300" href="/contact-us.html">Contact Us</a>
 										</li>
 										<li>
-											<a className="text-gray-300" href="./faq.html">FAQs</a>
+											<a className="text-gray-300" href="/faq.html">FAQs</a>
 										</li>
 										<li>
 											<a className="text-gray-300" data-toggle="modal" href="#modalSizeChart">Size Guide</a>
 										</li>
 										<li>
-											<a className="text-gray-300" href="./shipping-and-returns.html">Shipping & Returns</a>
+											<a className="text-gray-300" href="/shipping-and-returns.html">Shipping & Returns</a>
 										</li>
 									</ul>
 
@@ -78,16 +78,16 @@ export default class Footer extends Component{
 									{/* <!-- Links --> */}
 									<ul className="list-unstyled mb-7 mb-sm-0">
 										<li>
-											<a className="text-gray-300" href="./shop.html">Men's Shopping</a>
+											<a className="text-gray-300" href="/shop.html">Men's Shopping</a>
 										</li>
 										<li>
-											<a className="text-gray-300" href="./shop.html">Women's Shopping</a>
+											<a className="text-gray-300" href="/shop.html">Women's Shopping</a>
 										</li>
 										<li>
-											<a className="text-gray-300" href="./shop.html">Kids' Shopping</a>
+											<a className="text-gray-300" href="/shop.html">Kids' Shopping</a>
 										</li>
 										<li>
-											<a className="text-gray-300" href="./shop.html">Discounts</a>
+											<a className="text-gray-300" href="/shop.html">Discounts</a>
 										</li>
 									</ul>
 
@@ -102,7 +102,7 @@ export default class Footer extends Component{
 									{/* <!-- Links --> */}
 									<ul className="list-unstyled mb-0">
 										<li>
-											<a className="text-gray-300" href="./about.html">Our Story</a>
+											<a className="text-gray-300" href="/about.html">Our Story</a>
 										</li>
 										<li>
 											<a className="text-gray-300" href="#!">Careers</a>
@@ -154,12 +154,12 @@ export default class Footer extends Component{
 								<div className="col-auto">
 
 									{/* <!-- Payment methods --> */}
-									<img className="footer-payment" src="./assets/img/payment/mastercard.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/visa.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/amex.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/paypal.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/maestro.svg" alt="..." />
-									<img className="footer-payment" src="./assets/img/payment/klarna.svg" alt="..." />
+									<img className="footer-payment" src="/assets/img/payment/mastercard.svg" alt="..." />
+									<img className="footer-payment" src="/assets/img/payment/visa.svg" alt="..." />
+									<img className="footer-payment" src="/assets/img/payment/amex.svg" alt="..." />
+									<img className="footer-payment" src="/assets/img/payment/paypal.svg" alt="..." />
+									<img className="footer-payment" src="/assets/img/payment/maestro.svg" alt="..." />
+									<img className="footer-payment" src="/assets/img/payment/klarna.svg" alt="..." />
 
 								</div>
 							</div>

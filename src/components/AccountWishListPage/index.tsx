@@ -95,7 +95,7 @@ export default class AccountWishListPage extends Component{
 												</button>
 
 												{/* <!-- Image --> */}
-												<img className="card-img-top" src="assets/img/products/product-6.jpg" alt="..." />
+												<img className="card-img-top" src="/assets/img/products/product-6.jpg" alt="..." />
 
 											</div>
 
@@ -131,7 +131,7 @@ export default class AccountWishListPage extends Component{
 												</button>
 
 												{/* <!-- Image --> */}
-												<img className="card-img-top" src="assets/img/products/product-10.jpg" alt="..." />
+												<img className="card-img-top" src="/assets/img/products/product-10.jpg" alt="..." />
 
 											</div>
 
@@ -165,7 +165,7 @@ export default class AccountWishListPage extends Component{
 												</button>
 
 												{/* <!-- Image --> */}
-												<img className="card-img-top" src="assets/img/products/product-32.jpg" alt="..." />
+												<img className="card-img-top" src="/assets/img/products/product-32.jpg" alt="..." />
 
 											</div>
 
@@ -196,7 +196,7 @@ export default class AccountWishListPage extends Component{
 												</button>
 
 												{/* <!-- Image --> */}
-												<img className="card-img-top" src="assets/img/products/product-7.jpg" alt="..." />
+												<img className="card-img-top" src="/assets/img/products/product-7.jpg" alt="..." />
 
 											</div>
 
@@ -227,7 +227,7 @@ export default class AccountWishListPage extends Component{
 												</button>
 
 												{/* <!-- Image --> */}
-												<img className="card-img-top" src="assets/img/products/product-11.jpg" alt="..." />
+												<img className="card-img-top" src="/assets/img/products/product-11.jpg" alt="..." />
 
 											</div>
 

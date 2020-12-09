@@ -4,28 +4,11 @@ import Navbar from "../Navbar"
 import Footer from '../Footer'
 
 import Promo from '../Promo'
+import Geral from '../../app/controls/Geral'
 
 export default class HomePage extends Component{
 	componentDidMount(){
-		let scripts = [
-			"./assets/libs/flickity/dist/flickity.pkgd.min.js",
-			"./assets/libs/flickity-fade/flickity-fade.js",
-			"./assets/js/theme.min.js",
-		]
-
-		function addScripts(index: number){
-			if(scripts[index] != null){
-				setTimeout(() => {
-					const script = document.createElement("script");
-					script.src = scripts[index];
-					script.async = true;
-			
-					document.body.appendChild(script);
-					addScripts(index + 1);
-				}, 1000);
-			}
-		}
-		addScripts(0)
+		Geral.loadScripts();
 	}
   render(){
     return (
@@ -127,10 +110,10 @@ export default class HomePage extends Component{
 									{/* <!-- Image --> */}
 									<div className="card-img" data-flickity='{"draggable": false}' id="productOneImg">
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-5.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-5.jpg" alt="..." />
 										</a>
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-142.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-142.jpg" alt="..." />
 										</a>
 									</div>
 
@@ -217,10 +200,10 @@ export default class HomePage extends Component{
 									{/* <!-- Image --> */}
 									<div className="card-img" data-flickity='{"draggable": false}' id="productTwoImg">
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-6.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-6.jpg" alt="..." />
 										</a>
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-143.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-143.jpg" alt="..." />
 										</a>
 									</div>
 
@@ -310,7 +293,7 @@ export default class HomePage extends Component{
 									</div>
 
 									{/* <!-- Image --> */}
-									<img className="card-img-top" src="assets/img/products/product-7.jpg" alt="..." />
+									<img className="card-img-top" src="/assets/img/products/product-7.jpg" alt="..." />
 
 									{/* <!-- Collapse --> */}
 									<div className="card-collapse-parent">
@@ -392,7 +375,7 @@ export default class HomePage extends Component{
 								<div className="card mb-7" data-toggle="card-collapse">
 
 									{/* <!-- Image --> */}
-									<img className="card-img-top" src="assets/img/products/product-8.jpg" alt="..." />
+									<img className="card-img-top" src="/assets/img/products/product-8.jpg" alt="..." />
 
 									{/* <!-- Collapse --> */}
 									<div className="card-collapse-parent">
@@ -471,7 +454,7 @@ export default class HomePage extends Component{
 								<div className="card mb-7" data-toggle="card-collapse">
 
 									{/* <!-- Image --> */}
-									<img className="card-img-top" src="assets/img/products/product-9.jpg" alt="..." />
+									<img className="card-img-top" src="/assets/img/products/product-9.jpg" alt="..." />
 
 									{/* <!-- Collapse --> */}
 									<div className="card-collapse-parent">
@@ -557,10 +540,10 @@ export default class HomePage extends Component{
 									{/* <!-- Image --> */}
 									<div className="card-img" data-flickity='{"draggable": false}' id="productSixImg">
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-10.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-10.jpg" alt="..." />
 										</a>
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-144.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-144.jpg" alt="..." />
 										</a>
 									</div>
 
@@ -648,7 +631,7 @@ export default class HomePage extends Component{
 								<div className="card mb-7" data-toggle="card-collapse">
 
 									{/* <!-- Image --> */}
-									<img className="card-img-top" src="assets/img/products/product-11.jpg" alt="..." />
+									<img className="card-img-top" src="/assets/img/products/product-11.jpg" alt="..." />
 
 									{/* <!-- Collapse --> */}
 									<div className="card-collapse-parent">
@@ -734,10 +717,10 @@ export default class HomePage extends Component{
 									{/* <!-- Image --> */}
 									<div className="card-img" data-flickity='{"draggable": false}' id="productEightImg">
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-12.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-12.jpg" alt="..." />
 										</a>
 										<a className="d-block w-100" href="product.html">
-											<img className="card-img-top" src="assets/img/products/product-145.jpg" alt="..." />
+											<img className="card-img-top" src="/assets/img/products/product-145.jpg" alt="..." />
 										</a>
 									</div>
 
@@ -874,7 +857,7 @@ export default class HomePage extends Component{
 							<div className="col-12 col-md-4">
 
 								{/* <!-- Image --> */}
-								<img src="assets/img/products/product-38.jpg" alt="..." className="img-fluid my-12" />
+								<img src="/assets/img/products/product-38.jpg" alt="..." className="img-fluid my-12" />
 
 							</div>
 							<div className="col-12 col-md-4 text-center">
@@ -901,7 +884,7 @@ export default class HomePage extends Component{
 								<div className="position-relative">
 
 									{/* <!-- Poster --> */}
-									<img src="assets/img/products/product-39.jpg" alt="..." className="img-fluid my-12" />
+									<img src="/assets/img/products/product-39.jpg" alt="..." className="img-fluid my-12" />
 
 									{/* <!-- Button --> */}
 									<a className="btn btn-lg btn-circle btn-white btn-hover center" data-fancybox href="https://www.youtube.com/watch?v=BGrY85i-skk">
@@ -933,7 +916,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/mango.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/mango.svg" alt="..." />
 								</a>
 
 							</div>
@@ -941,7 +924,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/zara.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/zara.svg" alt="..." />
 								</a>
 
 							</div>
@@ -949,7 +932,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/reebok.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/reebok.svg" alt="..." />
 								</a>
 
 							</div>
@@ -957,7 +940,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/asos.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/asos.svg" alt="..." />
 								</a>
 
 							</div>
@@ -965,7 +948,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/stradivarius.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/stradivarius.svg" alt="..." />
 								</a>
 
 							</div>
@@ -973,7 +956,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/adidas.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/adidas.svg" alt="..." />
 								</a>
 
 							</div>
@@ -981,7 +964,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/bershka.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/bershka.svg" alt="..." />
 								</a>
 
 							</div>
@@ -989,7 +972,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/forever21.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/forever21.svg" alt="..." />
 								</a>
 
 							</div>
@@ -997,7 +980,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/esprit.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/esprit.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1005,7 +988,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/converse.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/converse.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1013,7 +996,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="shop.html">
-									<img className="brand-img" src="assets/img/brands/gray-350/calvin-klein.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/calvin-klein.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1021,7 +1004,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="#!">
-									<img className="brand-img" src="assets/img/brands/gray-350/joop.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/joop.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1029,7 +1012,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="#!">
-									<img className="brand-img" src="assets/img/brands/gray-350/h&m.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/h&m.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1037,7 +1020,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="#!">
-									<img className="brand-img" src="assets/img/brands/gray-350/only.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/only.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1045,7 +1028,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="#!">
-									<img className="brand-img" src="assets/img/brands/gray-350/guess.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/guess.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1053,7 +1036,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="#!">
-									<img className="brand-img" src="assets/img/brands/gray-350/river-island.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/river-island.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1061,7 +1044,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="#!">
-									<img className="brand-img" src="assets/img/brands/gray-350/victorias-secret.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/victorias-secret.svg" alt="..." />
 								</a>
 
 							</div>
@@ -1069,7 +1052,7 @@ export default class HomePage extends Component{
 
 								{/* <!-- Brand --> */}
 								<a className="brand lift mb-7 text-center" href="#!">
-									<img className="brand-img" src="assets/img/brands/gray-350/topshop.svg" alt="..." />
+									<img className="brand-img" src="/assets/img/brands/gray-350/topshop.svg" alt="..." />
 								</a>
 
 							</div>

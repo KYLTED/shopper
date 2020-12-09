@@ -148,7 +148,7 @@ export default class AccountOrderPage extends Component{
 													<div className="col-4 col-md-3 col-xl-2">
 
 														{/* <!-- Image --> */}
-														<a href="product.html"><img src="assets/img/products/product-6.jpg" alt="..." className="img-fluid" /></a>
+														<a href="product.html"><img src="/assets/img/products/product-6.jpg" alt="..." className="img-fluid" /></a>
 
 													</div>
 													<div className="col">
@@ -173,7 +173,7 @@ export default class AccountOrderPage extends Component{
 													<div className="col-4 col-md-3 col-xl-2">
 
 														{/* <!-- Image --> */}
-														<a href="product.html"><img src="assets/img/products/product-10.jpg" alt="..." className="img-fluid" /></a>
+														<a href="product.html"><img src="/assets/img/products/product-10.jpg" alt="..." className="img-fluid" /></a>
 
 													</div>
 													<div className="col">
@@ -198,7 +198,7 @@ export default class AccountOrderPage extends Component{
 													<div className="col-4 col-md-3 col-xl-2">
 
 														{/* <!-- Image --> */}
-														<a href="product.html"><img src="assets/img/products/product-48.jpg" alt="..." className="img-fluid" /></a>
+														<a href="product.html"><img src="/assets/img/products/product-48.jpg" alt="..." className="img-fluid" /></a>
 
 													</div>
 													<div className="col">

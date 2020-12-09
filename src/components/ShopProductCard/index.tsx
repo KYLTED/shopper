@@ -32,15 +32,15 @@ export default class ShopProductCard extends Component<IShopProductCard>{
 		if(this.product != null){
 			if(this.product.pictures.length === 1){
 				return (
-					<a className="card-img" href="product.html">
-						<img className="card-img-top card-img-front" src={"assets/img/products/"+this.product.pictures[0]}/>
+					<a className="card-img" href={"/product/"+this.product.id}>
+						<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[0]}/>
 					</a>
 				)
-			}else if(this.product.pictures.length === 2){
+			}else if(this.product.pictures.length >= 2){
 				return (
-					<a className="card-img-hover" href="product.html">
-						<img className="card-img-top card-img-back" src={"assets/img/products/"+this.product.pictures[0]}/>
-						<img className="card-img-top card-img-front" src={"assets/img/products/"+this.product.pictures[1]}/>
+					<a className="card-img-hover" href={"/product/"+this.product.id}>
+						<img className="card-img-top card-img-back" src={"/assets/img/products/"+this.product.pictures[0]}/>
+						<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[1]}/>
 					</a>
 				)
 			}
@@ -89,62 +89,58 @@ export default class ShopProductCard extends Component<IShopProductCard>{
   render(){
 		if(this.product != null){
 			return (
-				<div className="col-6 col-md-4">
-					{/* <!-- Card --> */}
-					<div className="card mb-7">
-	
-						{/* <!-- Badge --> */}
-						{this.renderBadge()}
-	
+				<div className="card mb-7">
+
+					{/* <!-- Badge --> */}
+					{this.renderBadge()}
+
+					{/* <!-- Image --> */}
+					<div className="card-img">
+
 						{/* <!-- Image --> */}
-						<div className="card-img">
-	
-							{/* <!-- Image --> */}
-							{this.renderImages()}
-	
-							{/* <!-- Actions --> */}
-							<div className="card-actions">
-								<span className="card-action">
-									<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="modal" data-target="#modalProduct">
-										<i className="fe fe-eye"></i>
-									</button>
-								</span>
-								<span className="card-action">
-									<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button">
-										<i className="fe fe-shopping-cart"></i>
-									</button>
-								</span>
-								<span className="card-action">
-									<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button">
-										<i className="fe fe-heart"></i>
-									</button>
-								</span>
-							</div>
-	
+						{this.renderImages()}
+
+						{/* <!-- Actions --> */}
+						<div className="card-actions">
+							<span className="card-action">
+								<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="modal" data-target="#modalProduct">
+									<i className="fe fe-eye"></i>
+								</button>
+							</span>
+							<span className="card-action">
+								<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button">
+									<i className="fe fe-shopping-cart"></i>
+								</button>
+							</span>
+							<span className="card-action">
+								<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button">
+									<i className="fe fe-heart"></i>
+								</button>
+							</span>
 						</div>
-	
-						{/* <!-- Body --> */}
-						<div className="card-body px-0">
-	
-							{/* <!-- Category --> */}
-							<div className="font-size-xs">
-								<a className="text-muted" href="shop.html">{this.getType()}</a>
-							</div>
-	
-							{/* <!-- Title --> */}
-							<div className="font-weight-bold">
-								<a className="text-body" href="product.html">
-									{this.product.name}
-								</a>
-							</div>
-	
-							{/* <!-- Price --> */}
-							{this.renderPrices()}
-	
-						</div>
-	
+
 					</div>
-	
+
+					{/* <!-- Body --> */}
+					<div className="card-body px-0">
+
+						{/* <!-- Category --> */}
+						<div className="font-size-xs">
+							<a className="text-muted" href="shop.html">{this.getType()}</a>
+						</div>
+
+						{/* <!-- Title --> */}
+						<div className="font-weight-bold">
+							<a className="text-body" href="product.html">
+								{this.product.name}
+							</a>
+						</div>
+
+						{/* <!-- Price --> */}
+						{this.renderPrices()}
+
+					</div>
+
 				</div>
 			)
 		}else return "";

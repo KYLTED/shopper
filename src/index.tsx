@@ -11,6 +11,8 @@ import AccountPersonalInfoPage from './components/AccountPersonalInfoPage';
 import AccountAddressPage from './components/AccountAddressPage';
 import AccountPaymentPage from './components/AccountPaymentPage';
 import ShopPage from './components/ShopPage';
+import ProductPage from './components/ProductPage';
+import NotFoundPage from './components/NotFoundPage';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -29,6 +31,12 @@ ReactDOM.render(
 				</Route>
 				<Route path="/shop">
 					<ShopPage />
+				</Route>
+				<Route path="/product/:id">
+					<ProductPage />
+				</Route>
+				<Route path="/404">
+					<NotFoundPage />
 				</Route>
 				{/* Account pages */}
 					<Route path="/account-orders">

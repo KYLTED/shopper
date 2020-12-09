@@ -3,7 +3,7 @@ export default class Product {
 	public static readonly DRESSES = 2;
 	public static readonly TOPS = 3;
 	public static readonly BAGS = 4;
-	public static readonly SHIRTS = 4;
+	public static readonly SHIRTS = 5;
 
 	public static readonly SUMMER = 1;
 	public static readonly WINTER = 2;
@@ -71,6 +71,14 @@ export default class Product {
 		this._is_sale = is_sale;
 		this._is_new = is_new;
 		this._filter = filter;
+	}
+
+	static getTypeName(type:number){
+		if(type == Product.SHOES) return "Shoes";
+		else if(type == Product.DRESSES) return "Dresses";
+		else if(type == Product.TOPS) return "Tops";
+		else if(type == Product.BAGS) return "Bags";
+		else if(type == Product.SHIRTS) return "Shirts";
 	}
 
 	/**

@@ -11,6 +11,7 @@ import ShopProductCard from "../ShopProductCard"
 import Promo from "../Promo"
 
 import Product from "../../app/models/Product"
+import Geral from '../../app/controls/Geral'
 
 export default class ShopPage extends Component{
 	filters:any;
@@ -711,10 +712,13 @@ export default class ShopPage extends Component{
 			})
 			
 			products.forEach((product, index) => {
-				let e = <ShopProductCard product={product} key={product.id} />;
+				let e = (
+					<div className="col-6 col-md-4">
+						<ShopProductCard product={product} key={product.id} />
+					</div>
+				);
 				elements.push(e);
 			});
-			console.log(products);
 			ReactDOM.render(elements, product_container);
 		}
 	}
@@ -722,6 +726,7 @@ export default class ShopPage extends Component{
 	componentDidMount(){
 		this.refreshProducts();
 		$('input[type="checkbox"]').on('change', () => this.refreshProducts())
+		Geral.loadScripts();
 	}
 
   render(){
@@ -1088,6 +1093,43 @@ export default class ShopPage extends Component{
 
 							</div>
 							<div className="col-12 col-md-8 col-lg-9">
+								{/* <!-- Header --> */}
+								<div className="row align-items-center mb-7">
+									<div className="col-12 col-md">
+
+										{/* <!-- Heading --> */}
+										<h3 className="mb-1">Womens' Clothing</h3>
+
+										{/* <!-- Breadcrumb --> */}
+										<ol className="breadcrumb mb-md-0 font-size-xs text-gray-400">
+											<li className="breadcrumb-item">
+												<a className="text-gray-400" href="index.html">Home</a>
+											</li>
+											<li className="breadcrumb-item active">
+												Women's Clothing
+											</li>
+										</ol>
+
+									</div>
+									<div className="col-12 col-md-auto">
+
+										{/* <!-- Select --> */}
+										<select className="custom-select custom-select-xs" defaultValue="most_popular">
+											<option value="most_popular">Most popular</option>
+										</select>
+
+									</div>
+								</div>
+
+								{/* <!-- Tags --> */}
+								<div className="row mb-7">
+									<div className="col-12" id="tags-container">
+									</div>
+								</div>
+
+								{/* <!-- Products --> */}
+								<div className="row" id="products-container">
+								</div>
 
 								{/* <!-- Slider --> */}
 								<div className="flickity-page-dots-inner mb-9" data-flickity='{"pageDots": true}'>
@@ -1168,77 +1210,34 @@ export default class ShopPage extends Component{
 
 								</div>
 
-								{/* <!-- Header --> */}
-								<div className="row align-items-center mb-7">
-									<div className="col-12 col-md">
-
-										{/* <!-- Heading --> */}
-										<h3 className="mb-1">Womens' Clothing</h3>
-
-										{/* <!-- Breadcrumb --> */}
-										<ol className="breadcrumb mb-md-0 font-size-xs text-gray-400">
-											<li className="breadcrumb-item">
-												<a className="text-gray-400" href="index.html">Home</a>
-											</li>
-											<li className="breadcrumb-item active">
-												Women's Clothing
-											</li>
-										</ol>
-
-									</div>
-									<div className="col-12 col-md-auto">
-
-										{/* <!-- Select --> */}
-										<select className="custom-select custom-select-xs" defaultValue="most_popular">
-											<option value="most_popular">Most popular</option>
-										</select>
-
-									</div>
-								</div>
-
-								{/* <!-- Tags --> */}
-								<div className="row mb-7">
-									<div className="col-12" id="tags-container">
-									</div>
-								</div>
-
-								{/* <!-- Products --> */}
-								<div className="row" id="products-container">
-								</div>
-
 								{/* <!-- Pagination --> */}
-								<nav className="d-flex justify-content-center justify-content-md-end">
-									<ul className="pagination pagination-sm text-gray-400">
-										<li className="page-item">
-											<a className="page-link page-link-arrow" href="#">
-												<i className="fa fa-caret-left"></i>
-											</a>
-										</li>
-										<li className="page-item active">
-											<a className="page-link" href="#">1</a>
-										</li>
-										<li className="page-item">
-											<a className="page-link" href="#">2</a>
-										</li>
-										<li className="page-item">
-											<a className="page-link" href="#">3</a>
-										</li>
-										<li className="page-item">
-											<a className="page-link" href="#">4</a>
-										</li>
-										<li className="page-item">
-											<a className="page-link" href="#">5</a>
-										</li>
-										<li className="page-item">
-											<a className="page-link" href="#">6</a>
-										</li>
-										<li className="page-item">
-											<a className="page-link page-link-arrow" href="#">
-												<i className="fa fa-caret-right"></i>
-											</a>
-										</li>
-									</ul>
-								</nav>
+								<div className="row">
+									<div className="col-12">
+
+										{/* <!-- Progress --> */}
+										<div className="row justify-content-center mt-7">
+											<div className="col-12 text-center">
+
+												{/* <!-- Caption --> */}
+												<p className="font-size-sm text-muted">
+													Showing 8 of 8 products
+												</p>
+
+												{/* <!-- Progress --> */}
+												<div className="progress mx-auto mb-7" style={{maxWidth: "250px"}}>
+													<div className="progress-bar bg-dark" role="progressbar" style={{width: "100%"}}></div>
+												</div>
+
+												{/* <!-- Button --> */}
+												<a className="btn btn-sm btn-outline-dark disabled" href="#!">
+													Load more
+												</a>
+
+											</div>
+										</div>
+
+									</div>
+								</div>
 
 							</div>
 						</div>
