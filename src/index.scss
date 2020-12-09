@@ -10,6 +10,10 @@ body{
 	}
 }
 
+.form-group-overflow{
+	max-height: none;
+}
+
 @font-face {
   font-family: 'Futura Medium';
   // src: local('Futura'), url("./assets/fonts/futur.ttf") format('truetype');

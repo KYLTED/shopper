@@ -8,20 +8,24 @@ import Promo from '../Promo'
 export default class HomePage extends Component{
 	componentDidMount(){
 		let scripts = [
-			"./assets/js/theme.min.js",
 			"./assets/libs/flickity/dist/flickity.pkgd.min.js",
 			"./assets/libs/flickity-fade/flickity-fade.js",
+			"./assets/js/theme.min.js",
 		]
 
-		setTimeout(() => {
-			scripts.forEach(src => {
-				const script = document.createElement("script");
-				script.src = src;
-				script.async = true;
-		
-				document.body.appendChild(script);
-			})
-		}, 2000);
+		function addScripts(index: number){
+			if(scripts[index] != null){
+				setTimeout(() => {
+					const script = document.createElement("script");
+					script.src = scripts[index];
+					script.async = true;
+			
+					document.body.appendChild(script);
+					addScripts(index + 1);
+				}, 1000);
+			}
+		}
+		addScripts(0)
 	}
   render(){
     return (

@@ -13,131 +13,20 @@ import Promo from "../Promo"
 import Product from "../../app/models/Product"
 
 export default class ShopPage extends Component{
+	filters:any;
+	
+	// renderFilters(){
+	// 	if(this.filters != null){
 
-	state: {
-		category:{
-			type:{
-				shoes: boolean,
-				dresses: boolean,
-				tops	: boolean,
-				bags	: boolean,
-				shirts	: boolean
-			},
-		},
-		season:{
-			summer: boolean,
-			winter: boolean,
-			spring_autumm: boolean,
-		},
-		size:{
-			three_xs: boolean,
-			two_xs: boolean,
-			xs: boolean,
-			s: boolean,
-			m: boolean,
-			l: boolean,
-			xl: boolean,
-			two_xl: boolean,
-			three_xl: boolean,
-			four_xl: boolean,
-			one_size: boolean,
-		},
-		color:{
-			black: boolean,
-			white: boolean,
-			blue: boolean,
-			red: boolean,
-			brown: boolean,
-			gray: boolean,
-			cyan: boolean,
-		},
-		brand:{
-			dsquared_two: boolean,
-			alexander_mc_queen: boolean,
-			balenciaga: boolean,
-			adidas: boolean,
-			balmain: boolean,
-			burberry: boolean,
-			chloe: boolean,
-		},
-		price:{
-			ten_fifty: boolean,
-			fifty_hundred: boolean,
-			hundred_two_hundred: boolean,
-			two_hundred_up: boolean,
-			price_one: boolean,
-			price_two: boolean,
-		},
-	};
+	// 	}
+	// }
+
 	constructor(props: any){
 		super(props);
-		this.state = {
-			category:{
-				type:{
-					shoes: false,
-					dresses: false,
-					tops	: false,
-					bags	: false,
-					shirts	: false
-				},
-			},
-			season:{
-				summer: false,
-				winter: false,
-				spring_autumm: false,
-			},
-			size:{
-				three_xs: false,
-				two_xs: false,
-				xs: false,
-				s: false,
-				m: false,
-				l: false,
-				xl: false,
-				two_xl: false,
-				three_xl: false,
-				four_xl: false,
-				one_size: false,
-			},
-			color:{
-				black: false,
-				white: false,
-				blue: false,
-				red: false,
-				brown: false,
-				gray: false,
-				cyan: false,
-			},
-			brand:{
-				dsquared_two: false,
-				alexander_mc_queen: false,
-				balenciaga: false,
-				adidas: false,
-				balmain: false,
-				burberry: false,
-				chloe: false,
-			},
-			price:{
-				ten_fifty: false,
-				fifty_hundred: false,
-				hundred_two_hundred: false,
-				two_hundred_up: false,
-				price_one: false,
-				price_two: false,
-			},
-		}
-	}
-
-	changeShoes(){
-		this.setState((state:any) => ({
-			category:{
-				type:{
-					shoes: !state.category.type.shoes
-				}
-			}
-		}), ()=>{
-			this.refreshProducts()
-		})
+		
+		//Get filter from the API
+		// this.filters = require("../../data/filters.json");
+		// this.renderFilters();
 	}
 
 	refreshProducts(){
@@ -147,25 +36,246 @@ export default class ShopPage extends Component{
 		if(products != null && document != null){
 			let product_container = document.getElementById("products-container")!;
 			let elements:Array<JSX.Element> = [];
-			products.forEach(product => {
-				console.log(product);
-				console.log(this.state);
-				if(this.state.category.type.shoes == true){
-					if(product.filter.category.type.includes(Product.SHOES)){
-						let e = <ShopProductCard product={product} />;
-						elements.push(e);
+			
+			products = products.filter(product => {
+				let is_filter = false;
+				if($('#category_type_shoes').is(":checked")){
+					if(product.filter.category.type != null && product.filter.category.type.includes(Product.SHOES)) {
+						return true;
 					}
-				}else{
-					let e = <ShopProductCard product={product} />;
-					elements.push(e);
+					is_filter = true;
 				}
+				
+				if($('#category_type_dresses').is(":checked")){
+					if(product.filter.category.type != null && product.filter.category.type.includes(Product.DRESSES)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#category_type_tops').is(":checked")){
+					if(product.filter.category.type != null && product.filter.category.type.includes(Product.TOPS)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#category_type_bags').is(":checked")){
+					if(product.filter.category.type != null && product.filter.category.type.includes(Product.BAGS)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#category_type_shirts').is(":checked")){
+					if(product.filter.category.type != null && product.filter.category.type.includes(Product.SHIRTS)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#summer').is(":checked")){
+					if(product.filter.season != null && product.filter.season.includes(Product.SUMMER)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#winter').is(":checked")){
+					if(product.filter.season != null && product.filter.season.includes(Product.WINTER)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#spring').is(":checked")){
+					if(product.filter.season != null && product.filter.season.includes(Product.SPRING)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#autumn').is(":checked")){
+					if(product.filter.season != null && product.filter.season.includes(Product.AUTUMM)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#3xs').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.THREE_XS)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#2xs').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.TWO_XS)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#xs').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.XS)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#s').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.S)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#m').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.M)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#l').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.L)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#xl').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.XL)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#2xl').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.TWO_XL)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#3xl').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.THREE_XL)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#4xl').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.FOUR_XL)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#one_size').is(":checked")){
+					if(product.filter.size != null && product.filter.size.includes(Product.ONE_SIZE)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#black').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.BLACK)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#white').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.WHITE)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#blue').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.BLUE)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#red').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.RED)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#brown').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.BROWN)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#gray').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.GRAY)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#cyan').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.CYAN)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#pink').is(":checked")){
+					if(product.filter.color != null && product.filter.color.includes(Product.PINK)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#brand_one').is(":checked")){
+					if(product.filter.brand != null && product.filter.brand.includes(Product.BRAND_ONE)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#brand_two').is(":checked")){
+					if(product.filter.brand != null && product.filter.brand.includes(Product.BRAND_ONE)) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#priceOne').is(":checked")){
+					if(product.price >= 10.0 && product.price <= 49.99) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#priceTwo').is(":checked")){
+					if(product.price >= 50.0 && product.price <= 99.99) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#priceThree').is(":checked")){
+					if(product.price >= 100.0 && product.price <= 199.99) 
+						return true
+					is_filter = true;
+				}
+				
+				if($('#priceFour').is(":checked")){
+					if(product.price >= 200.0) 
+						return true
+					is_filter = true;
+				}
+
+				let range_one_val = $('#range_one').val();
+				let range_two_val = $('#range_two').val();
+				if(range_one_val != null && range_one_val != "" && range_two_val != null && range_two_val != ""){
+					if(product.price >= range_one_val && product.price <= range_two_val) 
+						return true
+					is_filter = true;
+				}else if(range_one_val != null && range_one_val != "" && range_two_val == null && range_two_val == ""){
+					if(product.price >= range_one_val) 
+						return true
+					is_filter = true;
+				}else if(range_one_val == null && range_one_val == "" && range_two_val != null){
+					if(product.price <= range_two_val) 
+						return true
+					is_filter = true;
+				}
+
+				if(is_filter) return false;
+				else return true;
+			})
+			
+			products.forEach((product, index) => {
+				let e = <ShopProductCard product={product} key={product.id} />;
+				elements.push(e);
 			});
+			console.log(products);
 			ReactDOM.render(elements, product_container);
 		}
 	}
 
 	componentDidMount(){
 		this.refreshProducts();
+		$('input[type="checkbox"]').on('change', () => this.refreshProducts())
 	}
 
   render(){
@@ -191,46 +301,46 @@ export default class ShopPage extends Component{
 											</a>
 
 											{/* <!-- Collapse --> */}
-											<div className="collapse" id="categoryCollapse">
+											<div className="collapse show" id="categoryCollapse">
 												<div className="form-group">
 													<ul className="list-styled mb-0" id="productsNav">
 														<li className="list-styled-item">
 
 															{/* <!-- Toggle --> */}
 															<a className="list-styled-link" data-toggle="collapse" href="#blousesCollapse">
-																ABC
+																Subcategory Name
 															</a>
 
 															{/* <!-- Collapse --> */}
-															<div className="collapse" id="blousesCollapse" data-parent="#productsNav">
+															<div className="collapse show" id="blousesCollapse" data-parent="#productsNav">
 																<div className="py-4 pl-5">
 																	<div className="custom-control custom-checkbox mb-3">
-																		<input className="custom-control-input" id="shoes" type="checkbox" onChange={() => this.changeShoes()} />
-																		<label className="custom-control-label" htmlFor="shoes">
+																		<input className="custom-control-input" id="category_type_shoes" type="checkbox" />
+																		<label className="custom-control-label" htmlFor="category_type_shoes">
 																			Shoes
 																		</label>
 																	</div>
 																	<div className="custom-control custom-checkbox mb-3">
-																		<input className="custom-control-input" id="dresses" type="checkbox" />
-																		<label className="custom-control-label" htmlFor="dresses">
+																		<input className="custom-control-input" id="category_type_dresses" type="checkbox" />
+																		<label className="custom-control-label" htmlFor="category_type_dresses">
 																			Dresses
 																		</label>
 																	</div>
 																	<div className="custom-control custom-checkbox mb-3">
-																		<input className="custom-control-input" id="tops" type="checkbox" />
-																		<label className="custom-control-label" htmlFor="tops">
+																		<input className="custom-control-input" id="category_type_tops" type="checkbox" />
+																		<label className="custom-control-label" htmlFor="category_type_tops">
 																			Tops
 																		</label>
 																	</div>
 																	<div className="custom-control custom-checkbox mb-3">
-																		<input className="custom-control-input" id="bags" type="checkbox" />
-																		<label className="custom-control-label" htmlFor="bags">
+																		<input className="custom-control-input" id="category_type_bags" type="checkbox" />
+																		<label className="custom-control-label" htmlFor="category_type_bags">
 																			Bags
 																		</label>
 																	</div>
 																	<div className="custom-control custom-checkbox">
-																		<input className="custom-control-input" id="shirts" type="checkbox" />
-																		<label className="custom-control-label" htmlFor="shirts">
+																		<input className="custom-control-input" id="category_type_shirts" type="checkbox" />
+																		<label className="custom-control-label" htmlFor="category_type_shirts">
 																			Shirts
 																		</label>
 																	</div>
@@ -254,21 +364,27 @@ export default class ShopPage extends Component{
 											<div className="collapse" id="seasonCollapse" data-toggle="simplebar" data-target="#seasonGroup">
 												<div className="form-group form-group-overflow mb-6" id="seasonGroup">
 													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="seasonOne" type="checkbox" defaultChecked />
-														<label className="custom-control-label" htmlFor="seasonOne">
+														<input className="custom-control-input" id="summer" type="checkbox" />
+														<label className="custom-control-label" htmlFor="summer">
 															Summer
 														</label>
 													</div>
 													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="seasonTwo" type="checkbox" />
-														<label className="custom-control-label" htmlFor="seasonTwo">
+														<input className="custom-control-input" id="winter" type="checkbox" />
+														<label className="custom-control-label" htmlFor="winter">
 															Winter
 														</label>
 													</div>
+													<div className="custom-control custom-checkbox mb-3">
+														<input className="custom-control-input" id="spring" type="checkbox" />
+														<label className="custom-control-label" htmlFor="spring">
+															Spring
+														</label>
+													</div>
 													<div className="custom-control custom-checkbox">
-														<input className="custom-control-input" id="seasonThree" type="checkbox" />
-														<label className="custom-control-label" htmlFor="seasonThree">
-															Spring & Autumn
+														<input className="custom-control-input" id="autumn" type="checkbox" />
+														<label className="custom-control-label" htmlFor="autumn">
+															Autumn
 														</label>
 													</div>
 												</div>
@@ -286,68 +402,68 @@ export default class ShopPage extends Component{
 											<div className="collapse" id="sizeCollapse" data-toggle="simplebar" data-target="#sizeGroup">
 												<div className="form-group form-group-overlow mb-6" id="sizeGroup">
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeOne" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeOne">
+														<input className="custom-control-input" id="3xs" type="checkbox" />
+														<label className="custom-control-label" htmlFor="3xs">
 															3XS
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeTwo" type="checkbox" disabled />
-														<label className="custom-control-label" htmlFor="sizeTwo">
+														<input className="custom-control-input" id="2xs" type="checkbox" />
+														<label className="custom-control-label" htmlFor="2xs">
 															2XS
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeThree" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeThree">
+														<input className="custom-control-input" id="xs" type="checkbox" />
+														<label className="custom-control-label" htmlFor="xs">
 															XS
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeFour" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeFour">
+														<input className="custom-control-input" id="s" type="checkbox" />
+														<label className="custom-control-label" htmlFor="s">
 															S
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeFive" type="checkbox" defaultChecked />
-														<label className="custom-control-label" htmlFor="sizeFive">
+														<input className="custom-control-input" id="m" type="checkbox" />
+														<label className="custom-control-label" htmlFor="m">
 															M
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeSix" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeSix">
+														<input className="custom-control-input" id="l" type="checkbox" />
+														<label className="custom-control-label" htmlFor="l">
 															L
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeSeven" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeSeven">
+														<input className="custom-control-input" id="xl" type="checkbox" />
+														<label className="custom-control-label" htmlFor="xl">
 															XL
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeEight" type="checkbox" disabled />
-														<label className="custom-control-label" htmlFor="sizeEight">
+														<input className="custom-control-input" id="2xl" type="checkbox" />
+														<label className="custom-control-label" htmlFor="2xl">
 															2XL
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeNine" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeNine">
+														<input className="custom-control-input" id="3xl" type="checkbox" />
+														<label className="custom-control-label" htmlFor="3xl">
 															3XL
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeTen" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeTen">
+														<input className="custom-control-input" id="4xl" type="checkbox" />
+														<label className="custom-control-label" htmlFor="4xl">
 															4XL
 														</label>
 													</div>
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="sizeEleven" type="checkbox" />
-														<label className="custom-control-label" htmlFor="sizeEleven">
+														<input className="custom-control-input" id="one_size" type="checkbox" />
+														<label className="custom-control-label" htmlFor="one_size">
 															One Size
 														</label>
 													</div>
@@ -366,50 +482,50 @@ export default class ShopPage extends Component{
 											<div className="collapse" id="colorCollapse" data-toggle="simplebar" data-target="#colorGroup">
 												<div className="form-group form-group-overflow mb-6" id="colorGroup">
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="colorOne" type="checkbox" />
-														<label className="custom-control-label text-dark" htmlFor="colorOne">
+														<input className="custom-control-input" id="black" type="checkbox" />
+														<label className="custom-control-label text-dark" htmlFor="black">
 															<span className="text-body">Black</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="colorTwo" type="checkbox" defaultChecked />
-														<label className="custom-control-label" style={{color: "#f9f9f9"}} htmlFor="colorTwo">
+														<input className="custom-control-input" id="white" type="checkbox" />
+														<label className="custom-control-label" style={{color: "#f9f9f9"}} htmlFor="white">
 															<span className="text-body">White</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="colorThree" type="checkbox" />
-														<label className="custom-control-label text-info" htmlFor="colorThree">
+														<input className="custom-control-input" id="blue" type="checkbox" />
+														<label className="custom-control-label text-info" htmlFor="blue">
 															<span className="text-body">Blue</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="colorFour" type="checkbox" />
-														<label className="custom-control-label text-primary" htmlFor="colorFour">
+														<input className="custom-control-input" id="red" type="checkbox" />
+														<label className="custom-control-label text-primary" htmlFor="red">
 															<span className="text-body">Red</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="colorFive" type="checkbox" disabled />
-														<label className="custom-control-label" htmlFor="colorFive" style={{color: "#795548"}}>
+														<input className="custom-control-input" id="brown" type="checkbox" />
+														<label className="custom-control-label" htmlFor="brown" style={{color: "#795548"}}>
 															<span className="text-body">Brown</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="colorSix" type="checkbox" />
-														<label className="custom-control-label text-gray-300" htmlFor="colorSix">
+														<input className="custom-control-input" id="gray" type="checkbox" />
+														<label className="custom-control-label text-gray-300" htmlFor="gray">
 															<span className="text-body">Gray</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="colorSeven" type="checkbox" />
-														<label className="custom-control-label" htmlFor="colorSeven" style={{color: "#17a2b8"}}>
+														<input className="custom-control-input" id="cyan" type="checkbox" />
+														<label className="custom-control-label" htmlFor="cyan" style={{color: "#17a2b8"}}>
 															<span className="text-body">Cyan</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color">
-														<input className="custom-control-input" id="colorEight" type="checkbox" />
-														<label className="custom-control-label" htmlFor="colorEight" style={{color: "#e83e8c"}}>
+														<input className="custom-control-input" id="pink" type="checkbox" />
+														<label className="custom-control-label" htmlFor="pink" style={{color: "#e83e8c"}}>
 															<span className="text-body">Pink</span>
 														</label>
 													</div>
@@ -447,57 +563,15 @@ export default class ShopPage extends Component{
 													<div className="form-group form-group-overflow mb-6" id="brandGroup">
 														<div className="list">
 															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandOne" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brandOne">
-																	Dsquared2
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandTwo" type="checkbox" disabled />
-																<label className="custom-control-label name" htmlFor="brandTwo">
-																	Alexander McQueen
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandThree" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brandThree">
-																	Balenciaga
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandFour" type="checkbox" defaultChecked />
-																<label className="custom-control-label name" htmlFor="brandFour">
-																	Adidas
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandFive" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brandFive">
-																	Balmain
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandSix" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brandSix">
-																	Burberry
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandSeven" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brandSeven">
-																	Chloé
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brandEight" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brandEight">
-																	Kenzo
+																<input className="custom-control-input" id="brand_a" type="checkbox" />
+																<label className="custom-control-label name" htmlFor="brand_a">
+																	Brand a
 																</label>
 															</div>
 															<div className="custom-control custom-checkbox">
-																<input className="custom-control-input" id="brandNine" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brandNine">
-																	Givenchy
+																<input className="custom-control-input" id="brand_b" type="checkbox" />
+																<label className="custom-control-label name" htmlFor="brand_b">
+																	Brand b
 																</label>
 															</div>
 														</div>
@@ -521,21 +595,21 @@ export default class ShopPage extends Component{
 												{/* <!-- Form group--> */}
 												<div className="form-group form-group-overflow mb-6" id="priceGroup">
 													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="priceOne" type="checkbox" defaultChecked />
+														<input className="custom-control-input" id="priceOne" type="checkbox" />
 														<label className="custom-control-label" htmlFor="priceOne">
-															$10.00 - $49.00
+															$10.00 - $49.99
 														</label>
 													</div>
 													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="priceTwo" type="checkbox" defaultChecked />
+														<input className="custom-control-input" id="priceTwo" type="checkbox" />
 														<label className="custom-control-label" htmlFor="priceTwo">
-															$50.00 - $99.00
+															$50.00 - $99.99
 														</label>
 													</div>
 													<div className="custom-control custom-checkbox mb-3">
 														<input className="custom-control-input" id="priceThree" type="checkbox" />
 														<label className="custom-control-label" htmlFor="priceThree">
-															$100.00 - $199.00
+															$100.00 - $199.99
 														</label>
 													</div>
 													<div className="custom-control custom-checkbox">
@@ -550,13 +624,13 @@ export default class ShopPage extends Component{
 												<div className="d-flex align-items-center">
 
 													{/* <!-- Input --> */}
-													<input type="number" className="form-control form-control-xs" placeholder="$10.00" min="10" />
+													<input type="number" className="form-control form-control-xs" placeholder="$10.00" min="10" id="range_one" />
 
 													{/* <!-- Divider --> */}
 													<div className="text-gray-350 mx-2">‒</div>
 
 													{/* <!-- Input --> */}
-													<input type="number" className="form-control form-control-xs" placeholder="$350.00" max="350" />
+													<input type="number" className="form-control form-control-xs" placeholder="$350.00" max="350" id="range_two" />
 
 												</div>
 
@@ -669,8 +743,8 @@ export default class ShopPage extends Component{
 									<div className="col-12 col-md-auto">
 
 										{/* <!-- Select --> */}
-										<select className="custom-select custom-select-xs">
-											<option selected>Most popular</option>
+										<select className="custom-select custom-select-xs" defaultValue="most_popular">
+											<option value="most_popular">Most popular</option>
 										</select>
 
 									</div>

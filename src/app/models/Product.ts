@@ -29,6 +29,7 @@ export default class Product {
 	public static readonly BROWN = 5;
 	public static readonly GRAY = 6;
 	public static readonly CYAN = 7;
+	public static readonly PINK = 8;
 	
 	public static readonly BRAND_ONE = 1;
 	public static readonly BRAND_TWO = 2;
@@ -40,6 +41,7 @@ export default class Product {
 	public static readonly HUNDRED_TWO_HUNDRED = 3;
 	public static readonly TWO_HUNDRED_UP = 4;
 
+	private _id: number;
 	private _name: string;
 	private _type: number;
 	private _price: number;
@@ -59,7 +61,8 @@ export default class Product {
 	};
 
 
-	constructor(name: string, type: number, price: number, old_price: number, pictures: Array<string>, is_sale: boolean, is_new: boolean, filter: any) {
+	constructor(id: number, name: string, type: number, price: number, old_price: number, pictures: Array<string>, is_sale: boolean, is_new: boolean, filter: any) {
+		this._id = id;
 		this._name = name;
 		this._type = type;
 		this._price = price;
@@ -70,6 +73,21 @@ export default class Product {
 		this._filter = filter;
 	}
 
+	/**
+	 * Setter id
+	 * @param {number} value
+	 */
+	public set id(value: number) {
+		this._id = value;
+	}
+	
+	/**
+	 * Getter id
+	 * @return {number}
+	 */
+	public get id(): number {
+		return this._id;
+	}
 
 	/**
 	 * Getter name
@@ -197,5 +215,4 @@ export default class Product {
 	public set filter(value: any) {
 		this._filter = value;
 	}
-
 }
