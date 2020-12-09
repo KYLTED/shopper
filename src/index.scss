@@ -14,6 +14,11 @@ body{
 	max-height: none;
 }
 
+.btn-light{
+	background-color: inherit;
+	border-color: #DDD;
+}
+
 @font-face {
   font-family: 'Futura Medium';
   // src: local('Futura'), url("./assets/fonts/futur.ttf") format('truetype');

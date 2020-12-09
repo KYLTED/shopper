@@ -15,11 +15,455 @@ import Product from "../../app/models/Product"
 export default class ShopPage extends Component{
 	filters:any;
 	
-	// renderFilters(){
-	// 	if(this.filters != null){
+	renderTags(){
+		let elements: Array<JSX.Element> = [];
+		let tags_container = document.getElementById("tags-container")!;
 
-	// 	}
-	// }
+
+		if($('#category_type_shoes').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="category_type_shoes">
+					Shoes <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#category_type_shoes').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#category_type_dresses').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="category_type_dresses">
+					Dresses <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#category_type_dresses').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#category_type_tops').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="category_type_tops">
+					Tops <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#category_type_tops').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#category_type_bags').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="category_type_bags">
+					Bags <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#category_type_bags').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#category_type_shirts').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="category_type_shirts">
+					Shirts <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#category_type_shirts').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#summer').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="summer">
+					Summer <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#summer').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#winter').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="winter">
+					Winter <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#winter').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#spring').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="spring">
+					Spring <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#spring').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#autumn').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="autumn">
+					Autumn <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#autumn').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#3xs').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="3xs">
+					3XS <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#3xs').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#2xs').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="2xs">
+					2XS <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#2xs').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#xs').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="xs">
+					XS <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#xs').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#s').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="s">
+					S <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#s').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#m').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="m">
+					M <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#m').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#l').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="l">
+					L <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#l').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#xl').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="xl">
+					XL <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#xl').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#2xl').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="2xl">
+					2XL <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#2xl').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#3xl').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="3xl">
+					3XL <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#3xl').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#4xl').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="4xl">
+					4XL <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#4xl').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#one_size').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="one_size">
+					One Size <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#one_size').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#black').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="black">
+					Black <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#black').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#white').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="white">
+					White <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#white').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#blue').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="blue">
+					Blue <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#blue').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#red').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="red">
+					Red <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#red').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#brown').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="brown">
+					Brown <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#brown').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#gray').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="gray">
+					Gray <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#gray').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#cyan').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="cyan">
+					Cyan <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#cyan').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#pink').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="pink">
+					Pink <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#pink').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#brand_one').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="brand_one">
+					Brand One <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#brand_one').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#brand_two').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="brand_two">
+					Brand Two <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#brand_two').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#priceOne').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="priceOne">
+					$10.00 - $49.99 <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#priceOne').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#priceTwo').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="priceTwo">
+					$50.00 - $99.99 <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#priceTwo').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#priceThree').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="priceThree">
+					$100 - $199.99 <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#priceThree').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		if($('#priceFour').is(":checked")){
+			elements.push(
+				<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3" key="priceFour">
+					$200 to Up <a className="text-reset ml-2" role="button" onClick={() => {
+							$('#priceFour').prop('checked', false);
+							this.refreshProducts();
+						}}>
+						<i className="fe fe-x"></i>
+					</a>
+				</span>
+			);
+		}
+
+		ReactDOM.render(elements, tags_container);
+	}
 
 	constructor(props: any){
 		super(props);
@@ -30,6 +474,8 @@ export default class ShopPage extends Component{
 	}
 
 	refreshProducts(){
+		//Get Products from api
+		this.renderTags();
 		//Get Products from api
 		let products:Array<Product> = require("../../data/products.json");
 
@@ -753,42 +1199,6 @@ export default class ShopPage extends Component{
 								{/* <!-- Tags --> */}
 								<div className="row mb-7">
 									<div className="col-12" id="tags-container">
-										<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3">
-											Summer <a className="text-reset ml-2" href="#!" role="button">
-												<i className="fe fe-x"></i>
-											</a>
-										</span>
-										<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3">
-											M <a className="text-reset ml-2" href="#!" role="button">
-												<i className="fe fe-x"></i>
-											</a>
-										</span>
-										<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3">
-											White <a className="text-reset ml-2" href="#!" role="button">
-												<i className="fe fe-x"></i>
-											</a>
-										</span>
-										<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3">
-											Red <a className="text-reset ml-2" href="#!" role="button">
-												<i className="fe fe-x"></i>
-											</a>
-										</span>
-										<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3">
-											Adidas <a className="text-reset ml-2" href="#!" role="button">
-												<i className="fe fe-x"></i>
-											</a>
-										</span>
-										<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3">
-											$10.00 - $49.00 <a className="text-reset ml-2" href="#!" role="button">
-												<i className="fe fe-x"></i>
-											</a>
-										</span>
-										<span className="btn btn-xs btn-light font-weight-normal text-muted mr-3 mb-3">
-											$50.00 - $99.00 <a className="text-reset ml-2" href="#!" role="button">
-												<i className="fe fe-x"></i>
-											</a>
-										</span>
-
 									</div>
 								</div>
 
