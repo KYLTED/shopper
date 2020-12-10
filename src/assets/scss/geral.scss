@@ -1,0 +1,30 @@
+.nav-logo{
+	width: 140px;
+}
+
+body{
+	font-family: "Futura Medium";
+	
+	b, h1, h2, h3, h4, .nav-link, .font-weight-bold, .btn{
+		font-family: "Futura Heavy";
+	}
+}
+
+.form-group-overflow{
+	max-height: none;
+}
+
+.btn-light{
+	background-color: inherit;
+	border-color: #DDD;
+}
+
+// .nav-header{
+// 	font-size: 26px;
+// }
+
+.nav-recommendations{
+	display: flex;
+	flex-direction: row;
+	justify-content: center!important;
+}

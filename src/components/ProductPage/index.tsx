@@ -28,8 +28,8 @@ export default class ProductPage extends Component{
 		// set Randow numbers
 		let arr:Array<number> = [];
 		let maxnum = 7;
-		while (arr.length < 4) {
-			let randomnum = Math.ceil(Math.random() * 10)
+		while (arr.length < 8) {
+			let randomnum = Math.ceil(Math.random() * 10) - 1;
 			if(randomnum <= maxnum){
 				arr.every(function (a) {
 						return a !== randomnum;
@@ -41,14 +41,14 @@ export default class ProductPage extends Component{
 			products[arr[0]],
 			products[arr[1]],
 			products[arr[2]],
-			products[arr[3]]
+			products[arr[3]],
+			products[arr[4]],
+			products[arr[5]],
+			products[arr[6]],
+			products[arr[7]],
 		];
 
 		this.products = products;
-	}
-
-	componentDidMount(){
-		Geral.loadScripts();
 	}
 
 	renderBadge(){
@@ -126,6 +126,10 @@ export default class ProductPage extends Component{
 				);
 			}
 		}
+	}
+
+	componentDidMount(){
+		// Geral.loadScripts();
 	}
 
   render(){
@@ -525,30 +529,69 @@ export default class ProductPage extends Component{
 				</section>
 
 				{/* <!-- PRODUCTS --> */}
-				<section className="pt-11">
+				<section className="pt-10">
 					<div className="container">
 						<div className="row">
 							<div className="col-12">
 
-								{/* <!-- Heading --> */}
-								<h4 className="mb-10 text-center">You might also like</h4>
+								{/* <!-- DESCRIPTION --> */}
+								<section className="pt-11">
+									<div className="container">
+										<div className="row">
+											<div className="col-12">
 
-								{/* <!-- Items --> */}
-								<div className="row">
-									<div className="col-6 col-sm-6 col-md-4 col-lg-3">
-										<ShopProductCard product={this.products[0]} key={this.products[0].id} />
-									</div>
-									<div className="col-6 col-sm-6 col-md-4 col-lg-3">
-										<ShopProductCard product={this.products[1]} key={this.products[1].id} />
-									</div>
-									<div className="col-6 col-sm-6 col-md-4 col-lg-3">
-										<ShopProductCard product={this.products[2]} key={this.products[2].id} />
-									</div>
-									<div className="col-6 col-sm-6 col-md-4 col-lg-3 d-md-none d-lg-block">
-										<ShopProductCard product={this.products[3]} key={this.products[3].id} />
-									</div>
-								</div>
+												{/* <!-- Nav --> */}
+												<div className="nav nav-tabs nav-overflow justify-content-start justify-content-md-center nav-recommendations">
+													<a className="nav-link nav-header mb-9 active" data-toggle="tab" href="#recommended-products">
+														Recommended
+													</a>
+													<a className="nav-link nav-header mb-9" data-toggle="tab" href="#combined-products">
+														Combined
+													</a>
+												</div>
 
+												{/* <!-- Content --> */}
+												<div className="tab-content">
+													<div className="tab-pane fade show active" id="recommended-products">
+														{/* <!-- Items --> */}
+														<div className="row">
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3">
+																<ShopProductCard product={this.products[0]} key={this.products[0].id} />
+															</div>
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3">
+																<ShopProductCard product={this.products[1]} key={this.products[1].id} />
+															</div>
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3">
+																<ShopProductCard product={this.products[2]} key={this.products[2].id} />
+															</div>
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3 d-md-none d-lg-block">
+																<ShopProductCard product={this.products[3]} key={this.products[3].id} />
+															</div>
+														</div>
+													</div>
+													<div className="tab-pane fade" id="combined-products">
+														{/* <!-- Items --> */}
+														<div className="row">
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3">
+																<ShopProductCard product={this.products[4]} key={this.products[4].id} />
+															</div>
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3">
+																<ShopProductCard product={this.products[5]} key={this.products[5].id} />
+															</div>
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3">
+																<ShopProductCard product={this.products[6]} key={this.products[6].id} />
+															</div>
+															<div className="col-6 col-sm-6 col-md-4 col-lg-3 d-md-none d-lg-block">
+																<ShopProductCard product={this.products[7]} key={this.products[7].id} />
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</section>
 							</div>
 						</div>
 					</div>

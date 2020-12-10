@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import './assets/scss/index.scss';
 
 import HomePage from './components/HomePage';
 import LoginPage from './components/LoginPage';

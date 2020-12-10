@@ -362,29 +362,29 @@ export default class Navbar extends Component{
 														{/* <!-- Links --> */}
 														<ul className="list-styled mb-7 font-size-sm">
 															<li className="list-styled-item">
-																<Link className="list-styled-link" to="/shop">
+																<a className="list-styled-link" href="/shop">
 																	Link A
-																</Link>
+																</a>
 															</li>
 															<li className="list-styled-item">
-																<Link className="list-styled-link" to="/shop">
+																<a className="list-styled-link" href="/shop">
 																	Link B
-																</Link>
+																</a>
 															</li>
 															<li className="list-styled-item">
-																<Link className="list-styled-link" to="/shop">
+																<a className="list-styled-link" href="/shop">
 																	Link C
-																</Link>
+																</a>
 															</li>
 															<li className="list-styled-item">
-																<Link className="list-styled-link" to="/shop">
+																<a className="list-styled-link" href="/shop">
 																	Link D
-																</Link>
+																</a>
 															</li>
 															<li className="list-styled-item">
-																<Link className="list-styled-link" to="/shop">
+																<a className="list-styled-link" href="/shop">
 																	Link E
-																</Link>
+																</a>
 															</li>
 														</ul>
 
@@ -394,21 +394,19 @@ export default class Navbar extends Component{
 														{/* <!-- Links --> */}
 														<ul className="list-styled font-size-sm">
 															<li className="list-styled-item">
-																<Link className="list-styled-link" to="/product/2">
+																<a className="list-styled-link" href="/product/1">
 																	Product 1
-																</Link>
+																</a>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/product-images-left.html">Images Left</a>
+																<a className="list-styled-link" href="/product/1">
+																	Product 2
+																</a>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/product-image-grid.html">Image Grid</a>
-															</li>
-															<li className="list-styled-item">
-																<a className="list-styled-link" href="/product-image-slider.html">Image Slider</a>
-															</li>
-															<li className="list-styled-item">
-																<a className="list-styled-link" href="/product-images-stacked.html">Images Stacked</a>
+																<a className="list-styled-link" href="/product/3">
+																	Product 3
+																</a>
 															</li>
 														</ul>
 

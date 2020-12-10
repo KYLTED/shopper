@@ -468,7 +468,6 @@ export default class ShopPage extends Component{
 
 	constructor(props: any){
 		super(props);
-		
 		//Get filter from the API
 		// this.filters = require("../../data/filters.json");
 		// this.renderFilters();
@@ -713,8 +712,8 @@ export default class ShopPage extends Component{
 			
 			products.forEach((product, index) => {
 				let e = (
-					<div className="col-6 col-md-4">
-						<ShopProductCard product={product} key={product.id} />
+					<div className="col-6 col-md-4" key={product.id}>
+						<ShopProductCard product={product} />
 					</div>
 				);
 				elements.push(e);
@@ -726,7 +725,7 @@ export default class ShopPage extends Component{
 	componentDidMount(){
 		this.refreshProducts();
 		$('input[type="checkbox"]').on('change', () => this.refreshProducts())
-		Geral.loadScripts();
+		// Geral.loadScripts();
 	}
 
   render(){
