@@ -9,10 +9,20 @@ import AccountOrderPage from './components/AccountOrderPage';
 import AccountWishListPage from './components/AccountWishListPage';
 import AccountPersonalInfoPage from './components/AccountPersonalInfoPage';
 import AccountAddressPage from './components/AccountAddressPage';
+import AccountAddressEditPage from './components/AccountAddressEditPage';
 import AccountPaymentPage from './components/AccountPaymentPage';
+import AccountPaymentEditPage from './components/AccountPaymentEditPage';
+import AccountPaymentChoosePage from './components/AccountPaymentChoosePage';
 import ShopPage from './components/ShopPage';
 import ProductPage from './components/ProductPage';
 import NotFoundPage from './components/NotFoundPage';
+import ShoppingCardPage from './components/ShoppingCardPage';
+import CheckoutPage from './components/CheckoutPage';
+import OrderCompletedPage from './components/OrderCompletedPage';
+import ShippingAndReturnsPage from './components/ShippingAndReturnsPage';
+import AboutPage from './components/AboutPage';
+import ContactUsPage from './components/ContactUsPage';
+import FaqPage from './components/FaqPage';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -38,6 +48,30 @@ ReactDOM.render(
 				<Route path="/404">
 					<NotFoundPage />
 				</Route>
+				<Route path="/shopping-cart">
+					<ShoppingCardPage />
+				</Route>
+				<Route path="/checkout">
+					<CheckoutPage />
+				</Route>
+				<Route path="/order-completed">
+					<OrderCompletedPage />
+				</Route>
+				<Route path="/shipping-and-returns">
+					<ShippingAndReturnsPage />
+				</Route>
+				<Route path="/faq">
+					<FaqPage />
+				</Route>
+				<Route path="/faq">
+					<FaqPage />
+				</Route>
+				<Route path="/contact-us">
+					<ContactUsPage />
+				</Route>
+				<Route path="/about">
+					<AboutPage />
+				</Route>
 				{/* Account pages */}
 					<Route path="/account-orders">
 						<AccountOrdersPage />
@@ -54,8 +88,17 @@ ReactDOM.render(
 					<Route path="/account-address">
 						<AccountAddressPage />
 					</Route>
+					<Route path="/account-address-edit">
+						<AccountAddressEditPage />
+					</Route>
 					<Route path="/account-payment">
 						<AccountPaymentPage />
+					</Route>
+					<Route path="/account-payment-edit">
+						<AccountPaymentEditPage />
+					</Route>
+					<Route path="/account-payment-choose">
+						<AccountPaymentChoosePage />
 					</Route>
 				{/* ------ */}
 				<Route exact path="/">

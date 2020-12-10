@@ -18,4 +18,18 @@ export default class Geral {
 		}
 		addScripts(0)
 	}
+
+	static getRandomNumber(min: number, max: number, quant: number){
+		let arr:Array<number> = [];
+		let maxnum = max;
+		while (arr.length < quant) {
+			let randomnum = Math.ceil(min + Math.random() * maxnum);
+			if(randomnum <= maxnum){
+				arr.every(function (a) {
+						return a !== randomnum;
+				}) && arr.push(randomnum);
+			}
+		}
+		return arr;
+	}
 }

@@ -7,7 +7,7 @@ export default class LoginPage extends Component{
   render(){
     return (
 			<div className="loginpage">
-				<Navbar />
+				<Navbar className="border-bottom" />
 				{/* <!-- CONTENT --> */}
 				<section className="py-12">
 					<div className="container">

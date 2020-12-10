@@ -26,17 +26,8 @@ export default class ProductPage extends Component{
 		this.product = product;
 
 		// set Randow numbers
-		let arr:Array<number> = [];
-		let maxnum = 7;
-		while (arr.length < 8) {
-			let randomnum = Math.ceil(Math.random() * 10) - 1;
-			if(randomnum <= maxnum){
-				arr.every(function (a) {
-						return a !== randomnum;
-				}) && arr.push(randomnum);
-			}
-		}
-
+		let arr = Geral.getRandomNumber(0, 8, 8).map((n:number) => n - 1);
+		console.log(arr);
 		products = [
 			products[arr[0]],
 			products[arr[1]],
@@ -135,8 +126,32 @@ export default class ProductPage extends Component{
   render(){
     return (
 			<div className="accountorderspage">
-				<Navbar />
-				
+				<Navbar className="border-bottom" />
+
+				{/* <!-- BREADCRUMB --> */}
+				<nav className="py-5">
+					<div className="container">
+						<div className="row">
+							<div className="col-12">
+
+								{/* <!-- Breadcrumb --> */}
+								<ol className="breadcrumb mb-0 font-size-xs text-gray-400">
+									<li className="breadcrumb-item">
+										<a className="text-gray-400" href="index.html">Home</a>
+									</li>
+									<li className="breadcrumb-item">
+										<a className="text-gray-400" href="shop.html">Women's Shoes</a>
+									</li>
+									<li className="breadcrumb-item active">
+										Leather Sneakers
+									</li>
+								</ol>
+
+							</div>
+						</div>
+					</div>
+				</nav>
+
 				{/* <!-- PRODUCT --> */}
 				<section>
 					<div className="container">

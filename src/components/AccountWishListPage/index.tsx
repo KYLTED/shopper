@@ -9,7 +9,7 @@ export default class AccountWishListPage extends Component{
   render(){
     return (
 			<div className="accountorderspage">
-				<Navbar />
+				<Navbar className="border-bottom" />
 
 				{/* <!-- BREADCRUMB --> */}
 				<nav className="py-5">

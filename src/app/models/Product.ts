@@ -81,6 +81,17 @@ export default class Product {
 		else if(type == Product.SHIRTS) return "Shirts";
 	}
 
+	static getColorName(color:number){
+		if(color == Product.BLACK) return "Black";
+		else if(color == Product.WHITE) return "White";
+		else if(color == Product.BLUE) return "Blue";
+		else if(color == Product.RED) return "Red";
+		else if(color == Product.BROWN) return "Brown";
+		else if(color == Product.GRAY) return "Gray";
+		else if(color == Product.CYAN) return "Cyan";
+		else if(color == Product.PINK) return "Pink";
+	}
+
 	/**
 	 * Setter id
 	 * @param {number} value

@@ -9,7 +9,7 @@ export default class AccountPaymentPage extends Component{
   render(){
     return (
 			<div className="accountorderspage">
-				<Navbar />
+				<Navbar className="border-bottom" />
 
 				
 				{/* <!-- BREADCRUMB --> */}
@@ -50,19 +50,19 @@ export default class AccountPaymentPage extends Component{
 								{/* <!-- Nav --> */}
 								<nav className="mb-10 mb-md-0">
 									<div className="list-group list-group-sm list-group-strong list-group-flush-x">
-										<Link className="list-group-item list-group-item-action dropright-toggle" to="account-orders">
+										<Link className="list-group-item list-group-item-action dropright-toggle" to="/account-orders">
 											Orders
 										</Link>
-										<Link className="list-group-item list-group-item-action dropright-toggle" to="account-wishlist">
+										<Link className="list-group-item list-group-item-action dropright-toggle" to="/account-wishlist">
 											Wishlist
 										</Link>
-										<Link className="list-group-item list-group-item-action dropright-toggle" to="account-personal-info">
+										<Link className="list-group-item list-group-item-action dropright-toggle" to="/account-personal-info">
 											Personal Info
 										</Link>
-										<Link className="list-group-item list-group-item-action dropright-toggle" to="account-address">
+										<Link className="list-group-item list-group-item-action dropright-toggle" to="/account-address">
 											Addresses
 										</Link>
-										<Link className="list-group-item list-group-item-action dropright-toggle active" to="account-payment">
+										<Link className="list-group-item list-group-item-action dropright-toggle active" to="/account-payment">
 											Payment Methods
 										</Link>
 										<Link className="list-group-item list-group-item-action dropright-toggle" to="/login">
@@ -108,9 +108,9 @@ export default class AccountPaymentPage extends Component{
 												<div className="card-action card-action-right">
 
 													{/* <!-- Button --> */}
-													<a className="btn btn-xs btn-circle btn-white-primary" href="account-payment-edit.html">
+													<Link className="btn btn-xs btn-circle btn-white-primary" to="account-payment-edit">
 														<i className="fe fe-edit-2"></i>
-													</a>
+													</Link>
 
 													{/* <!-- Button --> */}
 													<button className="btn btn-xs btn-circle btn-white-primary">
@@ -126,9 +126,9 @@ export default class AccountPaymentPage extends Component{
 									<div className="col-12">
 
 										{/* <!-- Button --> */}
-										<a className="btn btn-block btn-lg btn-outline-border" href="account-payment-edit.html">
+										<Link className="btn btn-block btn-lg btn-outline-border" to="account-payment-edit">
 											Add Payment Method <i className="fe fe-plus"></i>
-										</a>
+										</Link>
 
 									</div>
 								</div>

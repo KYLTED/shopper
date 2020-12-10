@@ -3,7 +3,8 @@ import React, {Component} from 'react'
 import { Link } from "react-router-dom"
 import Logo from "../../assets/img/logo.png";
 
-export default class Navbar extends Component{
+export default class Navbar extends Component<{className?:string}>{
+
   render(){
     return (
 			<div className="loginpage">
@@ -115,7 +116,7 @@ export default class Navbar extends Component{
 					</div>
 				</div>
 				{/* <!-- NAVBAR --> */}
-				<nav className="navbar navbar-expand-lg navbar-light bg-white">
+				<nav className={"navbar navbar-expand-lg navbar-light bg-white"+((this.props.className != null) ? " "+this.props.className : "")}>
 					<div className="container">
 
 						{/* <!-- Brand --> */}
@@ -419,16 +420,24 @@ export default class Navbar extends Component{
 														{/* <!-- Links --> */}
 														<ul className="list-styled mb-7 font-size-sm">
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/shopping-cart.html">Shopping Cart</a>
+																<Link className="list-styled-link" to="/shopping-cart">
+																	Shopping Cart
+																</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/checkout.html">Checkout</a>
+																<Link className="list-styled-link" to="/checkout">
+																	Checkout
+																</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/order-completed.html">Order Completed</a>
+																<Link className="list-styled-link" to="/order-completed">
+																	Order Completed
+																</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/shipping-and-returns.html">Shipping & Returns</a>
+																<Link className="list-styled-link" to="/shipping-and-returns">
+																	Shipping & Returns
+																</Link>
 															</li>
 														</ul>
 
@@ -438,22 +447,22 @@ export default class Navbar extends Component{
 														{/* <!-- Links --> */}
 														<ul className="list-styled font-size-sm">
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-order.html">Order</a>
+																<Link className="list-styled-link" to="/account-order">Order</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-orders.html">Orders</a>
+																<Link className="list-styled-link" to="/account-orders">Orders</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-wishlist.html">Wishlist</a>
+																<Link className="list-styled-link" to="/account-wishlist">Wishlist</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-personal-info.html">Personal Info</a>
+																<Link className="list-styled-link" to="/account-personal-info">Personal Info</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-address.html">Addresses</a>
+																<Link className="list-styled-link" to="/account-address">Addresses</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-address-edit.html">Addresses: New</a>
+																<Link className="list-styled-link" to="/account-address-edit">Addresses: New</Link>
 															</li>
 														</ul>
 
@@ -463,16 +472,16 @@ export default class Navbar extends Component{
 														{/* <!-- Links --> */}
 														<ul className="list-styled mb-7 font-size-sm">
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-payment.html">Payment</a>
+																<Link className="list-styled-link" to="/account-payment">Payment</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-payment-edit.html">Payment: New</a>
+																<Link className="list-styled-link" to="/account-payment-edit">Payment: New</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/account-payment-choose.html">Payment: Choose</a>
+																<Link className="list-styled-link" to="/account-payment-choose">Payment: Choose</Link>
 															</li>
 															<li className="list-styled-item">
-																<a className="list-styled-link" href="/auth.html">Auth</a>
+																<Link className="list-styled-link" to="/login">Login</Link>
 															</li>
 														</ul>
 
@@ -537,22 +546,16 @@ export default class Navbar extends Component{
 											<div className="card-body">
 												<ul className="list-styled font-size-sm">
 													<li className="list-styled-item">
-														<a className="list-styled-link" href="/about.html">About</a>
+														<Link className="list-styled-link" to="/about">About</Link>
 													</li>
 													<li className="list-styled-item">
-														<a className="list-styled-link" href="/contact-us.html">Contact Us</a>
+														<Link className="list-styled-link" to="/contact-us">Contact Us</Link>
 													</li>
 													<li className="list-styled-item">
-														<a className="list-styled-link" href="/store-locator.html">Store Locator</a>
+														<Link className="list-styled-link" to="/faq">FAQ</Link>
 													</li>
 													<li className="list-styled-item">
-														<a className="list-styled-link" href="/faq.html">FAQ</a>
-													</li>
-													<li className="list-styled-item">
-														<a className="list-styled-link" href="/coming-soon.html">Coming Soon</a>
-													</li>
-													<li className="list-styled-item">
-														<a className="list-styled-link" href="/404.html">404</a>
+														<Link className="list-styled-link" to="/404">404</Link>
 													</li>
 												</ul>
 											</div>
@@ -561,12 +564,11 @@ export default class Navbar extends Component{
 
 
 								</li>
-								<li className="nav-item dropdown">
-
-									{/* <!-- Toggle --> */}
+								{/* <li className="nav-item dropdown">
+									<!-- Toggle -->
 									<a className="nav-link" data-toggle="dropdown" href="#">Blog</a>
 
-									{/* <!-- Menu --> */}
+									<!-- Menu -->
 									<div className="dropdown-menu">
 										<div className="card card-lg">
 											<div className="card-body">
@@ -581,15 +583,7 @@ export default class Navbar extends Component{
 											</div>
 										</div>
 									</div>
-
-
-								</li>
-								<li className="nav-item">
-									<a className="nav-link" href="docs/getting-started.html">Docs</a>
-								</li>
-								<li className="nav-item">
-									<Link className="nav-link" to="/login">Login</Link>
-								</li>
+								</li> */}
 							</ul>
 
 							{/* <!-- Nav --> */}

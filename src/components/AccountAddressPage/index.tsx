@@ -9,7 +9,7 @@ export default class AccountAddressPage extends Component{
   render(){
     return (
 			<div className="accountorderspage">
-				<Navbar />
+				<Navbar className="border-bottom" />
 
 				
 				{/* <!-- BREADCRUMB --> */}
@@ -99,9 +99,9 @@ export default class AccountAddressPage extends Component{
 												<div className="card-action card-action-right">
 
 													{/* <!-- Button --> */}
-													<a className="btn btn-xs btn-circle btn-white-primary" href="account-address-edit.html">
+													<Link className="btn btn-xs btn-circle btn-white-primary" to="account-address-edit">
 														<i className="fe fe-edit-2"></i>
-													</a>
+													</Link>
 
 													{/* <!-- Button --> */}
 													<button className="btn btn-xs btn-circle btn-white-primary">
@@ -139,9 +139,9 @@ export default class AccountAddressPage extends Component{
 												<div className="card-action card-action-right">
 
 													{/* <!-- Button --> */}
-													<a className="btn btn-xs btn-circle btn-white-primary" href="account-address-edit.html">
+													<Link className="btn btn-xs btn-circle btn-white-primary" to="account-address-edit">
 														<i className="fe fe-edit-2"></i>
-													</a>
+													</Link>
 
 													{/* <!-- Button --> */}
 													<button className="btn btn-xs btn-circle btn-white-primary">
@@ -157,9 +157,9 @@ export default class AccountAddressPage extends Component{
 									<div className="col-12">
 
 										{/* <!-- Button --> */}
-										<a className="btn btn-block btn-lg btn-outline-border" href="account-address-edit.html">
+										<Link className="btn btn-block btn-lg btn-outline-border" to="account-address-edit">
 											Add Address <i className="fe fe-plus"></i>
-										</a>
+										</Link>
 
 									</div>
 								</div>
