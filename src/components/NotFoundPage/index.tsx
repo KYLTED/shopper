@@ -30,9 +30,9 @@ export default class NotFoundPage extends Component{
 								</p>
 
 								{/* <!-- Button --> */}
-								<Link className="btn btn-dark" to="/">
+								<a className="btn btn-dark" href="/">
 									Go to Homepage
-								</Link>
+								</a>
 							</div>
 						</div>
 					</div>

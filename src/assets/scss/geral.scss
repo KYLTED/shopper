@@ -26,10 +26,6 @@ body {
 	border-color: #ddd;
 }
 
-// .nav-header{
-// 	font-size: 26px;
-// }
-
 .nav-recommendations {
 	display: flex;
 	flex-direction: row;
@@ -40,16 +36,6 @@ body {
 	font-size: 1.2rem;
 }
 
-// @media (min-width: 992px) {
-// 	.navbar-expand-lg .navbar-nav {
-// 		flex-direction: column;
-// 	}
-// }
-
-// .navbar-brand{
-// 	margin: 0;
-// 	align-content: center;
-// 	justify-content: center;
-// 	display: flex;
-// 	margin-bottom: .4rem;
-// }
+.flickity-page-dots-progress .flickity-page-dots .dot{
+	background-color: #111;
+}
