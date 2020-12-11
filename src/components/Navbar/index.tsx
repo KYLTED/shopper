@@ -25,7 +25,7 @@ export default class Navbar extends Component<{className?:string}>{
 								<li className="nav-item dropdown">
 
 									{/* <!-- Toggle --> */}
-									<a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+									<a className="nav-link" href="#">
 										<img className="mb-1 mr-1" src="/assets/img/flags/usa.svg" alt="..." /> United States
 									</a>
 
@@ -46,7 +46,7 @@ export default class Navbar extends Component<{className?:string}>{
 								<li className="nav-item dropdown">
 
 									{/* <!-- Toggle --> */}
-									<a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">English</a>
+									<a className="nav-link" href="#">English</a>
 
 									{/* <!-- Menu --> */}
 									<div className="dropdown-menu minw-0">
