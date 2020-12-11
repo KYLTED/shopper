@@ -1,18 +1,19 @@
 import React, {Component} from 'react'
+import Logo from "../../assets/img/logo_white.png";
 
 export default class Footer extends Component{
   render(){
     return (
 			<div className="footer">
 				{/* <!-- FOOTER --> */}
-				<footer className="bg-dark bg-cover @@classList" style={{backgroundImage: "url(./assets/img/patterns/pattern-2.svg)"}}>
+				<footer className="bg-dark bg-cover @@classList">
 					<div className="py-12 border-bottom border-gray-700">
 						<div className="container">
 							<div className="row">
 								<div className="col-12 col-md-3">
 
 									{/* <!-- Heading --> */}
-									<h4 className="mb-6 text-white">Shopper.</h4>
+									<img src={Logo} className="nav-logo mb-6"/>
 
 									{/* <!-- Social --> */}
 									<ul className="list-unstyled list-inline mb-7 mb-md-0 text-gray-350">

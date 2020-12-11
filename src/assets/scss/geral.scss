@@ -50,3 +50,23 @@ body {
 	margin-top: 4rem;
 	margin-bottom: 4rem;
 }
+
+.bg-dark{
+	background-color: #000!important;
+}
+
+.text-primary{
+	color: #222!important;
+}
+
+.navbar-light .navbar-nav .nav-link{
+	transition: .5s;
+	&:focus{
+		color:#000;
+	}
+	&:hover{
+		color:#000;
+		transform: translateY(-1px);
+	}
+
+}
