@@ -9,7 +9,7 @@ export default class Navbar extends Component<{className?:string}>{
     return (
 			<div className="loginpage">
 				{/* <!-- NAVBAR --> */}
-				<div className="navbar navbar-topbar navbar-expand-xl navbar-light bg-light">
+				<div className="navbar navbar-topbar navbar-expand-xl navbar-light bg-light navbar-first">
 					<div className="container">
 
 						{/* <!-- Toggler --> */}
@@ -76,15 +76,32 @@ export default class Navbar extends Component<{className?:string}>{
 				{/* <!-- NAVBAR --> */}
 				<nav className={"navbar navbar-expand-lg navbar-light bg-white"+((this.props.className != null) ? " "+this.props.className : "")}>
 					<div className="container">
-						{/* <!-- Brand --> */}
-						<a className="navbar-brand" href="/">
-							<img src={Logo} className="nav-logo"/>
-						</a>
-
 						{/* <!-- Toggler --> */}
 						<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 							<span className="navbar-toggler-icon"></span>
 						</button>
+
+						{/* <!-- Brand --> */}
+						<a className="navbar-brand" href="/">
+							<img src={Logo} className="nav-logo"/>
+						</a>
+						
+						{/* <!-- Nav --> */}
+						<ul className="navbar-nav flex-row navbar-icons-mobile">
+							<li className="nav-item">
+								<a className="nav-link" data-toggle="modal" href="#modalSearch">
+									<i className="fe fe-search"></i>
+								</a>
+							</li>
+							<li className="nav-item ml-lg-n4">
+								<a className="nav-link" data-toggle="modal" href="#modalShoppingCart">
+									<span>
+										<i className="fe fe-shopping-bag"></i>
+									</span> 
+								</a>
+							</li>
+						</ul>
+
 
 						{/* <!-- Collapse --> */}
 						<div className="collapse navbar-collapse" id="navbarCollapse">
@@ -1133,7 +1150,7 @@ export default class Navbar extends Component<{className?:string}>{
 							</ul>
 
 							{/* <!-- Nav --> */}
-							<ul className="navbar-nav flex-row">
+							<ul className="navbar-nav flex-row navbar-icons-desktop">
 								<li className="nav-item">
 									<a className="nav-link" data-toggle="modal" href="#modalSearch">
 										<i className="fe fe-search"></i>
