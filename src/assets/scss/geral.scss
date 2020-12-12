@@ -226,3 +226,7 @@ body {
 .container{
 	position: relative;
 }
+
+.navbar-nav > .dropdown.position-static > .dropdown-menu::before{
+	display: none;
+}

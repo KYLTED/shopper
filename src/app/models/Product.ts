@@ -4,6 +4,8 @@ export default class Product {
 	public static readonly TOPS = 3;
 	public static readonly BAGS = 4;
 	public static readonly SHIRTS = 5;
+	public static readonly SNEAKERS = 6;
+	public static readonly ACCESSORIES = 7;
 
 	public static readonly SUMMER = 1;
 	public static readonly WINTER = 2;
@@ -30,6 +32,12 @@ export default class Product {
 	public static readonly GRAY = 6;
 	public static readonly CYAN = 7;
 	public static readonly PINK = 8;
+	public static readonly YELLOW = 9;
+	public static readonly GREEN = 10;
+	public static readonly ORANGE = 11;
+	public static readonly GOLD = 12;
+	public static readonly SILVER = 13;
+	public static readonly NAVY = 14;
 	
 	public static readonly BRAND_ONE = 1;
 	public static readonly BRAND_TWO = 2;

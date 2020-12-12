@@ -114,7 +114,7 @@ export default class Navbar extends Component<{className?:string}>{
 									<a className="nav-link" data-toggle="dropdown" href="#">New in</a>
 
 									{/* <!-- Menu --> */}
-									<div className="dropdown-menu w-100">
+									<div className="dropdown-menu" style={{width: "500px"}}>
 
 										{/* <!-- Tabs --> */}
 										<form className="mb-2 mb-lg-0 border-bottom-lg">
@@ -130,9 +130,6 @@ export default class Navbar extends Component<{className?:string}>{
 															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
 																Men
 															</a>
-															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
-																Kids
-															</a>
 														</nav>
 
 													</div>
@@ -141,149 +138,41 @@ export default class Navbar extends Component<{className?:string}>{
 										</form>
 
 										{/* <!-- Tab content --> */}
-										<div className="card card-lg">
+										<div className="card card-sm">
 											<div className="card-body">
 												<div className="tab-content">
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-6 col-md">
+																<div className="col-4 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Clothing</div>
+																	<div className="mb-5 font-weight-bold">Shop By</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Clothing</a>
+																			<a className="list-styled-link" href="/shop?season=[1, 2, 3, 4]">Season</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Blouses & Shirts</a>
+																			<a className="list-styled-link" href="/shop?this_week=1">This Week</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Coats & Jackets</a>
+																			<a className="list-styled-link" href="/shop?this_month=1">This Month</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Dresses</a>
+																			<a className="list-styled-link" href="/shop?color=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]">Color</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hoodies & Sweats</a>
+																			<a className="list-styled-link" href="/shop?last_arrivals=1">Last arrivals</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Denim</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jeans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jumpers & Cardigans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Leggings</a>
+																			<a className="list-styled-link" href="/shop?best_sellers=1">Best Sellers</a>
 																		</li>
 																	</ul>
 
 																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Shoes & Boots</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Shoes & Boots</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Branded Shoes</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Boots</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Heels</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Trainers</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Sandals</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Shoes</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Wide Fit Shoes</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Bags & Accessories</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Bags & Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Bags & Purses</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Luggage</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Belts</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hats</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hair Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jewellery</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Travel Accessories</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Collections</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Collections</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Occasionwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Going Out</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Workwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Holiday Shop</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jean Fit Guide</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-4 d-none d-lg-block">
+																<div className="col-8 d-none d-lg-block">
 
 																	{/* <!-- Card --> */}
 																	<div className="card">
@@ -318,7 +207,7 @@ export default class Navbar extends Component<{className?:string}>{
 									<a className="nav-link" data-toggle="dropdown" href="#">Shoes</a>
 
 									{/* <!-- Menu --> */}
-									<div className="dropdown-menu w-100">
+									<div className="dropdown-menu" style={{width: "80%"}}>
 
 										{/* <!-- Tabs --> */}
 										<form className="mb-2 mb-lg-0 border-bottom-lg">
@@ -334,9 +223,6 @@ export default class Navbar extends Component<{className?:string}>{
 															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
 																Men
 															</a>
-															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
-																Kids
-															</a>
 														</nav>
 
 													</div>
@@ -351,138 +237,92 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Clothing</div>
+																	<div className="mb-5 font-weight-bold">Style</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Clothing</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&style=["Ankle Boots"]'>Ankle Boots</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Blouses & Shirts</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&style=["Boots"]'>Boots</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Coats & Jackets</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&style=["Flip Flops"]'>Flip Flops</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Dresses</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&style=["Mocasins"]'>Mocasins</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hoodies & Sweats</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&style=["Pumps & Heels"]'>Pumps & Heels</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Denim</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&style=["Sandals"]'>Sandals</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jeans</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&style=["Wedges"]'>Wedges</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jumpers & Cardigans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Leggings</a>
+																			<a className="list-styled-link" href='/shop?category=[1]'>All Style</a>
 																		</li>
 																	</ul>
 
 																</div>
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Shoes & Boots</div>
+																	<div className="mb-5 font-weight-bold">Featured Designers</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Shoes & Boots</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&design=["Gucci"]'>Gucci</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Branded Shoes</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&design=["Trussardi"]'>Trussardi</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Boots</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&design=["Prada"]'>Prada</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Heels</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&design=["Valentino"]'>Valentino</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Trainers</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&design=["Dc Martens"]'>Dc Martens</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Sandals</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&design=["UGG"]'>UGG</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Shoes</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Wide Fit Shoes</a>
+																			<a className="list-styled-link" href='/shop?category=[1]'>All Designers</a>
 																		</li>
 																	</ul>
 
 																</div>
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Bags & Accessories</div>
+																	<div className="mb-5 font-weight-bold">TAGS</div>
 
 																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
+																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Bags & Accessories</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&color=[1]'>Black</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Accessories</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&material=["Leather"]'>Leather</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Bags & Purses</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&color=[5]'>Brown</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Luggage</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&season=[2]'>Fall Winter</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Belts</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hats</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hair Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jewellery</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Travel Accessories</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Collections</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Collections</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Occasionwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Going Out</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Workwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Holiday Shop</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jean Fit Guide</a>
+																			<a className="list-styled-link" href='/shop?category=[1]&color=[2]'>White</a>
 																		</li>
 																	</ul>
 
@@ -522,7 +362,7 @@ export default class Navbar extends Component<{className?:string}>{
 									<a className="nav-link" data-toggle="dropdown" href="#">Sneakers</a>
 
 									{/* <!-- Menu --> */}
-									<div className="dropdown-menu w-100">
+									<div className="dropdown-menu" style={{width: "80%"}}>
 
 										{/* <!-- Tabs --> */}
 										<form className="mb-2 mb-lg-0 border-bottom-lg">
@@ -538,9 +378,6 @@ export default class Navbar extends Component<{className?:string}>{
 															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
 																Men
 															</a>
-															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
-																Kids
-															</a>
 														</nav>
 
 													</div>
@@ -555,138 +392,55 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Clothing</div>
+																	<div className="mb-5 font-weight-bold">Featured Designers</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Clothing</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&design=["Nike"]'>Nike</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Blouses & Shirts</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&design=["Bikkembers"]'>Bikkembers</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Coats & Jackets</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&design=["Adidas"]'>Adidas</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Dresses</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&design=["Prada"]'>Prada</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hoodies & Sweats</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&design=["Saucony"]'>Saucony</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Denim</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jeans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jumpers & Cardigans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Leggings</a>
+																			<a className="list-styled-link" href='/shop?category=[6]'>All Designers</a>
 																		</li>
 																	</ul>
 
 																</div>
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Shoes & Boots</div>
+																	<div className="mb-5 font-weight-bold">TAGS</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Shoes & Boots</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&color=[1]'>Black</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Branded Shoes</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&season=[2]'>Fall Winter</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Boots</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&color=[2]'>White</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Heels</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&this_year=1'>All Year</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Trainers</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Sandals</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Shoes</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Wide Fit Shoes</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Bags & Accessories</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Bags & Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Bags & Purses</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Luggage</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Belts</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hats</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hair Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jewellery</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Travel Accessories</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Collections</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Collections</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Occasionwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Going Out</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Workwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Holiday Shop</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jean Fit Guide</a>
+																			<a className="list-styled-link" href='/shop?category=[6]&last_arrivals=1'>New In</a>	
 																		</li>
 																	</ul>
 
@@ -720,18 +474,13 @@ export default class Navbar extends Component<{className?:string}>{
 
 									</div>
 								</li>
-								<li className="nav-item dropdown">
-
-									{/* <!-- Toggle --> */}
-									<a className="nav-link" href="/shop">Bags</a>
-								</li>
 								<li className="nav-item dropdown position-static">
 
 									{/* <!-- Toggle --> */}
-									<a className="nav-link" data-toggle="dropdown" href="#">Accessories</a>
+									<a className="nav-link" data-toggle="dropdown" href="#">Bags</a>
 
 									{/* <!-- Menu --> */}
-									<div className="dropdown-menu w-100">
+									<div className="dropdown-menu" style={{width: "80%"}}>
 
 										{/* <!-- Tabs --> */}
 										<form className="mb-2 mb-lg-0 border-bottom-lg">
@@ -747,9 +496,6 @@ export default class Navbar extends Component<{className?:string}>{
 															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
 																Men
 															</a>
-															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
-																Kids
-															</a>
 														</nav>
 
 													</div>
@@ -764,141 +510,91 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Clothing</div>
+																	<div className="mb-5 font-weight-bold">Style</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Clothing</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&style=["Clutch Bags"]'>Clutch Bags</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Blouses & Shirts</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&style=["Handbags"]'>Handbags</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Coats & Jackets</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&style=["Shoulder bags"]'>Shoulder bags</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Dresses</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&style=["Shopping bags"]'>Shopping bags</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hoodies & Sweats</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&style=["Crossbody bags"]'>Crossbody bags</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Denim</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jeans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jumpers & Cardigans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Leggings</a>
+																			<a className="list-styled-link" href='/shop?category=[4]'>All Style</a>
 																		</li>
 																	</ul>
 
 																</div>
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Shoes & Boots</div>
+																	<div className="mb-5 font-weight-bold">Featured Designers</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Shoes & Boots</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&design=["Prada"]'>Prada</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Branded Shoes</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&design=["Valentino"]'>Valentino</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Boots</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&design=["Trussardi"]'>Trussardi</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Heels</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&design=["Gucci"]'>Gucci</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Trainers</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&design=["Michael Kors"]'>Michael Kors</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Sandals</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&design=["Furla"]'>Furla</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Shoes</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Wide Fit Shoes</a>
+																			<a className="list-styled-link" href='/shop?category=[4]'>All Designers</a>
 																		</li>
 																	</ul>
 
 																</div>
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Bags & Accessories</div>
+																	<div className="mb-5 font-weight-bold">TAGS</div>
 
 																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
+																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Bags & Accessories</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&color=[1]'>Black</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Accessories</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&material=["Leather"]'>Leather</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Bags & Purses</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&color=[4]'>Red</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Luggage</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&color=[12]'>Gold</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Belts</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&color=[13]'>Silver</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hats</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hair Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jewellery</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Travel Accessories</a>
+																			<a className="list-styled-link" href='/shop?category=[4]&color=[14]'>Navy</a>
 																		</li>
 																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Collections</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Collections</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Occasionwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Going Out</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Workwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Holiday Shop</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jean Fit Guide</a>
-																		</li>
-																	</ul>
-
 																</div>
 																<div className="col-4 d-none d-lg-block">
 
@@ -916,7 +612,9 @@ export default class Navbar extends Component<{className?:string}>{
 																				</a>
 																			</div>
 																		</div>
+
 																	</div>
+
 																</div>
 															</div>
 														</div>
@@ -924,6 +622,152 @@ export default class Navbar extends Component<{className?:string}>{
 												</div>
 											</div>
 										</div>
+
+									</div>
+								</li>
+								<li className="nav-item dropdown position-static">
+
+									{/* <!-- Toggle --> */}
+									<a className="nav-link" data-toggle="dropdown" href="#">Accessories</a>
+
+									{/* <!-- Menu --> */}
+									<div className="dropdown-menu" style={{width: "80%"}}>
+
+										{/* <!-- Tabs --> */}
+										<form className="mb-2 mb-lg-0 border-bottom-lg">
+											<div className="container">
+												<div className="row">
+													<div className="col-12">
+
+														{/* <!-- Nav --> */}
+														<nav className="nav nav-tabs nav-overflow font-size-xs border-bottom border-bottom-lg-0">
+															<a className="nav-link text-uppercase active" data-toggle="tab" href="#navTab">
+																Women
+															</a>
+															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
+																Men
+															</a>
+														</nav>
+
+													</div>
+												</div>
+											</div>
+										</form>
+
+										{/* <!-- Tab content --> */}
+										<div className="card card-lg">
+											<div className="card-body">
+												<div className="tab-content">
+													<div className="tab-pane fade show active" id="navTab">
+														<div className="container">
+															<div className="row">
+																<div className="col-2 col-md">
+
+																	{/* <!-- Heading --> */}
+																	<div className="mb-5 font-weight-bold">Style</div>
+
+																	{/* <!-- Links --> */}
+																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&style=["Sunglasses"]'>Sunglasses</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&style=["Wallet"]'>Wallet</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&style=["Watches"]'>Watches</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&style=["Key chain"]'>Key chain</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]'>All Style</a>
+																		</li>
+																	</ul>
+
+																</div>
+																<div className="col-2 col-md">
+
+																	{/* <!-- Heading --> */}
+																	<div className="mb-5 font-weight-bold">Featured Designers</div>
+
+																	{/* <!-- Links --> */}
+																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&design=["Prada"]'>Prada</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&design=["Balenciaga"]'>Balenciaga</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&design=["Dior"]'>Dior</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&design=["Ermenegildo Zegna"]'>Ermenegildo Zegna</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&design=["Dsquared2"]'>Dsquared2</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&design=["RayBan"]'>RayBan</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]'>All Designers</a>
+																		</li>
+																	</ul>
+
+																</div>
+																<div className="col-2 col-md">
+
+																	{/* <!-- Heading --> */}
+																	<div className="mb-5 font-weight-bold">TAGS</div>
+
+																	{/* <!-- Links --> */}
+																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&color=[1]'>Black</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&color=[12]'>Gold</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&color=[2]'>White</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&color=[13]'>Silver</a>
+																		</li>
+																		<li className="list-styled-item">
+																			<a className="list-styled-link" href='/shop?category=[7]&color=[14]'>Navy</a>
+																		</li>
+																	</ul>
+																</div>
+																<div className="col-4 d-none d-lg-block">
+
+																	{/* <!-- Card --> */}
+																	<div className="card">
+
+																		{/* <!-- Image --> */}
+																		<img className="card-img" src="/assets/img/products/product-110.jpg" alt="..." />
+
+																		{/* <!-- Overlay --> */}
+																		<div className="card-img-overlay bg-dark-0 bg-hover align-items-center">
+																			<div className="text-center">
+																				<a className="btn btn-white stretched-link" href="/shop">
+																					Shop Sweaters <i className="fe fe-arrow-right ml-2"></i>
+																				</a>
+																			</div>
+																		</div>
+
+																	</div>
+
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
 									</div>
 								</li>
 								<li className="nav-item dropdown position-static">
@@ -932,7 +776,7 @@ export default class Navbar extends Component<{className?:string}>{
 									<a className="nav-link" data-toggle="dropdown" href="#">Sales</a>
 
 									{/* <!-- Menu --> */}
-									<div className="dropdown-menu w-100">
+									<div className="dropdown-menu" style={{width: "80%"}}>
 
 										{/* <!-- Tabs --> */}
 										<form className="mb-2 mb-lg-0 border-bottom-lg">
@@ -948,9 +792,6 @@ export default class Navbar extends Component<{className?:string}>{
 															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
 																Men
 															</a>
-															<a className="nav-link text-uppercase" data-toggle="tab" href="#navTab">
-																Kids
-															</a>
 														</nav>
 
 													</div>
@@ -965,138 +806,55 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Clothing</div>
+																	<div className="mb-5 font-weight-bold">Featured Designers</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Clothing</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&design=["Timberland"]'>Timberland</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Blouses & Shirts</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&design=["Balenciaga"]'>Balenciaga</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Coats & Jackets</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&design=["UGG"]'>UGG</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Dresses</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&design=["Fila"]'>Fila</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hoodies & Sweats</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&design=["Love Moschino"]'>Love Moschino</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Denim</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jeans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jumpers & Cardigans</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Leggings</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1'>All Designers</a>
 																		</li>
 																	</ul>
 
 																</div>
-																<div className="col-6 col-md">
+																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Shoes & Boots</div>
+																	<div className="mb-5 font-weight-bold">TAGS</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Shoes & Boots</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&color=[1]'>Black</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Branded Shoes</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&season=[2]'>Fall Winter</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Boots</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&color=[2]'>White</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Heels</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&this_year=1'>All Year</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Trainers</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Sandals</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Shoes</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Wide Fit Shoes</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Bags & Accessories</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Bags & Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Bags & Purses</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Luggage</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Belts</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hats</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Hair Accessories</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jewellery</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Travel Accessories</a>
-																		</li>
-																	</ul>
-
-																</div>
-																<div className="col-6 col-md">
-
-																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">Collections</div>
-
-																	{/* <!-- Links --> */}
-																	<ul className="list-styled mb-0 font-size-sm">
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">All Collections</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Occasionwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Going Out</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Workwear</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Holiday Shop</a>
-																		</li>
-																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop">Jean Fit Guide</a>
+																			<a className="list-styled-link" href='/shop?best_sellers=1&last_arrivals=1'>New In</a>	
 																		</li>
 																	</ul>
 
@@ -1127,26 +885,6 @@ export default class Navbar extends Component<{className?:string}>{
 										</div>
 									</div>
 								</li>
-								{/* <li className="nav-item dropdown">
-									<!-- Toggle -->
-									<a className="nav-link" data-toggle="dropdown" href="#">Blog</a>
-
-									<!-- Menu -->
-									<div className="dropdown-menu">
-										<div className="card card-lg">
-											<div className="card-body">
-												<ul className="list-styled font-size-sm">
-													<li className="list-styled-item">
-														<a className="list-styled-link" href="/blog.html">Blog</a>
-													</li>
-													<li className="list-styled-item">
-														<a className="list-styled-link" href="/blog-post.html">Blog Post</a>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</li> */}
 							</ul>
 
 							{/* <!-- Nav --> */}
