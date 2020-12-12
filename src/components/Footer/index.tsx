@@ -85,9 +85,6 @@ export default class Footer extends Component{
 											<a className="text-gray-300" href="/shop.html">Women's Shopping</a>
 										</li>
 										<li>
-											<a className="text-gray-300" href="/shop.html">Kids' Shopping</a>
-										</li>
-										<li>
 											<a className="text-gray-300" href="/shop.html">Discounts</a>
 										</li>
 									</ul>

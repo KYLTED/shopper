@@ -109,12 +109,12 @@ export default class ShopProductCard extends Component<IShopProductCard>{
 							</span>
 							<span className="card-action">
 								<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button">
-									<i className="fe fe-shopping-cart"></i>
+									<i className="fe fe-shopping-bag"></i>
 								</button>
 							</span>
 							<span className="card-action">
 								<button className="btn btn-xs btn-circle btn-white-primary" data-toggle="button">
-									<i className="fe fe-heart"></i>
+									<i className="fe fe-star"></i>
 								</button>
 							</span>
 						</div>

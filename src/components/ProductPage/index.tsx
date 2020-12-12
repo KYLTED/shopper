@@ -318,7 +318,7 @@ export default class ProductPage extends Component{
 
 														{/* <!-- Submit --> */}
 														<button type="submit" className="btn btn-block btn-dark mb-2">
-															Add to Cart <i className="fe fe-shopping-cart ml-2"></i>
+															Add to Cart <i className="fe fe-shopping-bag ml-2"></i>
 														</button>
 
 													</div>
@@ -326,7 +326,7 @@ export default class ProductPage extends Component{
 
 														{/* <!-- Wishlist --> */}
 														<button className="btn btn-outline-dark btn-block mb-2" data-toggle="button">
-															Wishlist <i className="fe fe-heart ml-2"></i>
+															Wishlist <i className="fe fe-star ml-2"></i>
 														</button>
 
 													</div>

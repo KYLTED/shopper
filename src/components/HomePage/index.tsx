@@ -8,7 +8,7 @@ import Geral from '../../app/controls/Geral'
 
 export default class HomePage extends Component{
 	componentDidMount(){
-		Geral.loadScripts();
+		// Geral.loadScripts();
 	}
   render(){
     return (
@@ -117,7 +117,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -148,7 +148,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Badge --> */}
@@ -185,7 +185,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -216,7 +216,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -247,7 +247,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -278,7 +278,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -309,7 +309,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -438,7 +438,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -469,7 +469,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Badge --> */}
@@ -506,7 +506,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -537,7 +537,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -568,7 +568,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -599,7 +599,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}
@@ -630,7 +630,7 @@ export default class HomePage extends Component{
 
 									{/* <!-- Action --> */}
 									<button className="btn btn-xs btn-circle btn-white-primary card-action card-action-right" data-toggle="button">
-										<i className="fe fe-heart"></i>
+										<i className="fe fe-star"></i>
 									</button>
 
 									{/* <!-- Button --> */}

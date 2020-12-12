@@ -161,5 +161,157 @@
 			"brand":[1, 2, 3, 4],
 			"price":[2]
 		}
+	},
+	{
+		"id": 9,
+		"name": "Bag one",
+		"type": 4,
+		"price": 90.0,
+		"pictures": [
+			"5ce696e0-fcd9-11ea-88d8-9b26ad216c77.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[4]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
+	},
+	{
+		"id": 10,
+		"name": "Bag two",
+		"type": 4,
+		"price": 90.0,
+		"pictures": [
+			"0151e710-201c-11eb-94ef-b7987ed61441.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[4]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
+	},
+	{
+		"id": 11,
+		"name": "Bag three",
+		"type": 4,
+		"price": 90.0,
+		"pictures": [
+			"9677ae30-fcd9-11ea-88d8-9b26ad216c77.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[4]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
+	},
+	{
+		"id": 12,
+		"name": "Bag four",
+		"type": 4,
+		"price": 90.0,
+		"pictures": [
+			"986035e0-201b-11eb-94ef-b7987ed61441.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[4]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
+	},
+	{
+		"id": 12,
+		"name": "Sneaker one",
+		"type": 6,
+		"price": 90.0,
+		"pictures": [
+			"986035e0-201b-11eb-94ef-b7987ed61441.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[6, 1]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
+	},
+	{
+		"id": 13,
+		"name": "Sneaker two",
+		"type": 6,
+		"price": 90.0,
+		"pictures": [
+			"e8ab2380-3c0e-11ea-8da2-bfe12ee87639.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[6, 1]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
+	},
+	{
+		"id": 14,
+		"name": "Shoes one",
+		"type": 1,
+		"price": 90.0,
+		"pictures": [
+			"a0148810-3c03-11ea-8da2-bfe12ee87639.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[1]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
+	},
+	{
+		"id": 15,
+		"name": "Shoes two",
+		"type": 1,
+		"price": 90.0,
+		"pictures": [
+			"d5c530e0-3c03-11ea-8da2-bfe12ee87639.jpg"
+		],
+		"filter": {
+			"category":{
+				"type":[1]
+			},
+			"season":[1],
+			"size":[],
+			"color":[3, 8],
+			"brand":[1],
+			"price":[2]
+		}
 	}
 ]

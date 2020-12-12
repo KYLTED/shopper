@@ -82,9 +82,11 @@ export default class Navbar extends Component<{className?:string}>{
 						</button>
 
 						{/* <!-- Brand --> */}
-						<a className="navbar-brand" href="/">
-							<img src={Logo} className="nav-logo"/>
-						</a>
+						<div className="navbar-brand-div">
+							<a className="navbar-brand" href="/">
+								<img src={Logo} className="nav-logo"/>
+							</a>
+						</div>
 						
 						{/* <!-- Nav --> */}
 						<ul className="navbar-nav flex-row navbar-icons-mobile">
@@ -305,7 +307,7 @@ export default class Navbar extends Component<{className?:string}>{
 																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">TAGS</div>
+																	<div className="mb-5 font-weight-bold">Tags</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
@@ -423,7 +425,7 @@ export default class Navbar extends Component<{className?:string}>{
 																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">TAGS</div>
+																	<div className="mb-5 font-weight-bold">Tags</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
@@ -572,7 +574,7 @@ export default class Navbar extends Component<{className?:string}>{
 																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">TAGS</div>
+																	<div className="mb-5 font-weight-bold">Tags</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
@@ -720,7 +722,7 @@ export default class Navbar extends Component<{className?:string}>{
 																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">TAGS</div>
+																	<div className="mb-5 font-weight-bold">Tags</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
@@ -837,7 +839,7 @@ export default class Navbar extends Component<{className?:string}>{
 																<div className="col-2 col-md">
 
 																	{/* <!-- Heading --> */}
-																	<div className="mb-5 font-weight-bold">TAGS</div>
+																	<div className="mb-5 font-weight-bold">Tags</div>
 
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
@@ -906,7 +908,7 @@ export default class Navbar extends Component<{className?:string}>{
 								</li>
 								<li className="nav-item ml-lg-n4">
 									<a className="nav-link" data-toggle="modal" href="#modalShoppingCart">
-										<span data-cart-items="2">
+										<span>
 											<i className="fe fe-shopping-bag"></i>
 										</span> 
 									</a>

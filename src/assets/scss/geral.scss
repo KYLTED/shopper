@@ -1,5 +1,5 @@
 .nav-logo {
-	width: 140px;
+	width: 170px;
 }
 
 body {
@@ -32,7 +32,11 @@ body {
 }
 
 .navbar-nav > .nav-item > .nav-link i {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
+}
+
+.navbar-light .navbar-nav .nav-link{
+	font-size: 18px;
 }
 
 .flickity-page-dots-progress .flickity-page-dots .dot {

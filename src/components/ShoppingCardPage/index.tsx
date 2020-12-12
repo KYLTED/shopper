@@ -75,7 +75,7 @@ export default class ShoppingCardPage extends Component{
 		super(props);
 		let products: Array<Product> = require("../../data/products.json");
 
-		let arr = Geral.getRandomNumber(0, 8, 3).map(n => n - 1);
+		let arr = Geral.getRandomNumber(0, products.length - 1, 3).map(n => n - 1);
 
 		this.products = [
 			products[arr[0]],
