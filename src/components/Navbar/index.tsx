@@ -146,7 +146,7 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-4 col-md">
+																<div className="col-12 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Shop By</div>
@@ -239,7 +239,7 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Style</div>
@@ -273,7 +273,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Featured Designers</div>
@@ -304,7 +304,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Tags</div>
@@ -394,7 +394,7 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Featured Designers</div>
@@ -422,7 +422,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Tags</div>
@@ -512,7 +512,7 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Style</div>
@@ -540,7 +540,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Featured Designers</div>
@@ -571,7 +571,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Tags</div>
@@ -663,7 +663,7 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Style</div>
@@ -688,7 +688,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Featured Designers</div>
@@ -719,7 +719,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Tags</div>
@@ -808,7 +808,7 @@ export default class Navbar extends Component<{className?:string}>{
 													<div className="tab-pane fade show active" id="navTab">
 														<div className="container">
 															<div className="row">
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Featured Designers</div>
@@ -836,7 +836,7 @@ export default class Navbar extends Component<{className?:string}>{
 																	</ul>
 
 																</div>
-																<div className="col-2 col-md">
+																<div className="col-6 col-md">
 
 																	{/* <!-- Heading --> */}
 																	<div className="mb-5 font-weight-bold">Tags</div>
