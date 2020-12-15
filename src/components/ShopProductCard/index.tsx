@@ -10,73 +10,70 @@ export default class ShopProductCard extends Component<IShopProductCard>{
 	product?: Product;
 
 	renderBadge(){
-		if(this.product != null){
-			if(this.product.is_new === true){
-				return (
-					<div className="badge badge-white card-badge card-badge-left text-uppercase">
-						New
-					</div>
-				)
-			}else if(this.product.is_sale === true){
-				return (
-					<div className="badge badge-dark card-badge card-badge-left text-uppercase">
-						Sale
-					</div>
-				)
-			}
-		}
+		// if(this.product != null){
+		// 	if(this.product.is_new === true){
+		// 		return (
+		// 			<div className="badge badge-white card-badge card-badge-left text-uppercase">
+		// 				New
+		// 			</div>
+		// 		)
+		// 	}else if(this.product.is_sale === true){
+		// 		return (
+		// 			<div className="badge badge-dark card-badge card-badge-left text-uppercase">
+		// 				Sale
+		// 			</div>
+		// 		)
+		// 	}
+		// }
 		return "";
 	}
 
 	renderImages(){
+		// if(this.product != null){
+		// 	if(this.product.pictures.length === 1){
+		// 		return (
+		// 			<a className="card-img" href={"/product/"+this.product.product_id}>
+		// 				<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[0]}/>
+		// 			</a>
+		// 		)
+		// 	}else if(this.product.pictures.length >= 2){
+		// 		return (
+		// 			<a className="card-img-hover" href={"/product/"+this.product.product_id}>
+		// 				<img className="card-img-top card-img-back" src={"/assets/img/products/"+this.product.pictures[0]}/>
+		// 				<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[1]}/>
+		// 			</a>
+		// 		)
+		// 	}
+		// }
 		if(this.product != null){
-			if(this.product.pictures.length === 1){
-				return (
-					<a className="card-img" href={"/product/"+this.product.id}>
-						<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[0]}/>
-					</a>
-				)
-			}else if(this.product.pictures.length >= 2){
-				return (
-					<a className="card-img-hover" href={"/product/"+this.product.id}>
-						<img className="card-img-top card-img-back" src={"/assets/img/products/"+this.product.pictures[0]}/>
-						<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[1]}/>
-					</a>
-				)
-			}
+			return (
+				<a className="card-img-hover" href={"/product/"+this.product.product_id}>
+					<img className="card-img-top card-img-back" src={"/assets/img/products/product-11.jpg"}/>
+					<img className="card-img-top card-img-front" src={"/assets/img/products/product-10.jpg"}/>
+				</a>
+			)
 		}
 		return "";
 	}
 
 	renderPrices(){
 		if(this.product != null){
-			if(this.product.price != null){
-				if(this.product.old_price != null){
+			if(this.product.sell_price != null){
+				if(this.product.suggested_price != null){
 					return (
 						<div className="font-weight-bold">
-							<span className="font-size-xs text-gray-350 text-decoration-line-through">${this.product.old_price.toFixed(2)}</span>
-							<span className="text-primary">${this.product.price.toFixed(2)}</span>
+							<span className="font-size-xs text-gray-350 text-decoration-line-through">${this.product.suggested_price.toFixed(2)}</span>
+							<span className="text-primary">${this.product.sell_price.toFixed(2)}</span>
 						</div>
 					)
 				}else{
 					return (
 						<div className="font-weight-bold text-muted">
-							${this.product.price.toFixed(2)}
+							${this.product.sell_price.toFixed(2)}
 						</div>
 					)
 				}
 			}
-		}
-		return "";
-	}
-
-	getType(){
-		if(this.product != null){
-			if(this.product.type === Product.SHOES) return "Shoes";
-			else if(this.product.type === Product.DRESSES) return "Dresses";
-			else if(this.product.type === Product.TOPS) return "Tops";
-			else if(this.product.type === Product.BAGS) return "Bags";
-			else if(this.product.type === Product.SHIRTS) return "Shirts";
 		}
 		return "";
 	}
@@ -126,7 +123,7 @@ export default class ShopProductCard extends Component<IShopProductCard>{
 
 						{/* <!-- Category --> */}
 						<div className="font-size-xs">
-							<a className="text-muted" href="shop.html">{this.getType()}</a>
+							<a className="text-muted" href="shop.html">{(this.product.Sottocategorie != null) ? this.product.Sottocategorie : this.product.Categorie}</a>
 						</div>
 
 						{/* <!-- Title --> */}

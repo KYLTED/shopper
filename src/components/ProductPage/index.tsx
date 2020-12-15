@@ -18,7 +18,7 @@ export default class ProductPage extends Component{
 		super(props);
 		let back = () => window.location.replace("/404");
 		let id_query = window.location.pathname.split("/")[2];
-		let id:number = parseInt(id_query);
+		let id:string = id_query;
 		let products: Array<Product> = require("../../data/products.json");
 		let product: Product = require("../../data/products.json").find((p: Product) => p.id == id);
 		
@@ -43,80 +43,110 @@ export default class ProductPage extends Component{
 	}
 
 	renderBadge(){
-		if(this.product != null){
-			if(this.product.is_new === true){
-				return (
-					<div className="badge badge-white card-badge card-badge-left text-uppercase">
-						New
-					</div>
-				)
-			}else if(this.product.is_sale === true){
-				return (
-					<div className="badge badge-primary card-badge text-uppercase">
-						Sale
-					</div>
-				)
-			}
-		}
+		// if(this.product != null){
+		// 	if(this.product.is_new === true){
+		// 		return (
+		// 			<div className="badge badge-white card-badge card-badge-left text-uppercase">
+		// 				New
+		// 			</div>
+		// 		)
+		// 	}else if(this.product.is_sale === true){
+		// 		return (
+		// 			<div className="badge badge-primary card-badge text-uppercase">
+		// 				Sale
+		// 			</div>
+		// 		)
+		// 	}
+		// }
 		return "";
 	}
 
 	renderSliderImgs(){
-		if(this.product != null){
-			if(this.product.pictures != null){
-				let elements:Array<JSX.Element> = []
-				this.product.pictures.forEach((pic:string, index:number) => {
-					elements.push((
-						<a href={"/assets/img/products/"+pic} data-fancybox key={index}>
-							<img src={"/assets/img/products/"+pic} className="card-img-top" />
+		// if(this.product != null){
+		// 	if(this.product.pictures != null){
+		// 		let elements:Array<JSX.Element> = []
+		// 		this.product.pictures.forEach((pic:string, index:number) => {
+		// 			elements.push((
+		// 				<a href={"/assets/img/products/"+pic} data-fancybox key={index}>
+		// 					<img src={"/assets/img/products/"+pic} className="card-img-top" />
+		// 				</a>
+		// 			))
+		// 		})
+
+		// 		return elements
+		// 	}
+		// }
+				let elements:Array<JSX.Element> = [
+					(
+						<a href={"/assets/img/products/product-11.jpg"} data-fancybox key={1}>
+							<img src={"/assets/img/products/product-11.jpg"} className="card-img-top" />
 						</a>
-					))
-				})
+					),
+					(
+						<a href={"/assets/img/products/product-10.jpg"} data-fancybox key={2}>
+							<img src={"/assets/img/products/product-10.jpg"} className="card-img-top" />
+						</a>
+					),
+				]
 
 				return elements
-			}
-		}
 		return "";
 	}
 
 	renderSliderImgsBottom(){
-		if(this.product != null){
-			if(this.product.pictures != null){
-				let elements:Array<JSX.Element> = []
-				this.product.pictures.forEach((pic:string, index:number) => {
-					elements.push((
-						<div className="col-12 px-2" style={{maxWidth: "113px"}} key={index}>
-							{/* <!-- Image --> */}
-							<div className="embed-responsive embed-responsive-1by1 bg-cover" style={{backgroundImage: "url(/assets/img/products/"+pic+")"}}></div>
-						</div>
-					))
-				})
+		// if(this.product != null){
+		// 	if(this.product.pictures != null){
+		// 		let elements:Array<JSX.Element> = []
+		// 		this.product.pictures.forEach((pic:string, index:number) => {
+		// 			elements.push((
+		// 				<div className="col-12 px-2" style={{maxWidth: "113px"}} key={index}>
+		// 					{/* <!-- Image --> */}
+		// 					<div className="embed-responsive embed-responsive-1by1 bg-cover" style={{backgroundImage: "url(/assets/img/products/"+pic+")"}}></div>
+		// 				</div>
+		// 			))
+		// 		})
 
-				return elements
-			}
-		}
+		// 		return elements
+		// 	}
+		// }
+		let elements:Array<JSX.Element> = [
+			(
+				<div className="col-12 px-2" style={{maxWidth: "113px"}} key={1}>
+					{/* <!-- Image --> */}
+					<div className="embed-responsive embed-responsive-1by1 bg-cover" style={{backgroundImage: "url(/assets/img/products/product-11.jpg)"}}></div>
+				</div>
+			)
+		]
+
+		return elements
 		return "";
 	}
 
 	renderPrice(){
-		if(this.product != null){
-			if(this.product.old_price != null){
-				return (
-					<div className="mb-7">
-						<span className="font-size-lg font-weight-bold text-gray-350 text-decoration-line-through">${this.product.old_price}</span>
-						<span className="ml-1 font-size-h5 font-weight-bolder text-primary">${this.product.price}</span>
-						<span className="font-size-sm ml-1">(In Stock)</span>
-					</div>
-				);
-			}else{
-				return (
-					<div className="mb-7">
-						<span className="ml-1 font-size-h5 font-weight-bolder text-primary">${this.product.price}</span>
-						<span className="font-size-sm ml-1">(In Stock)</span>
-					</div>
-				);
-			}
-		}
+		// if(this.product != null){
+		// 	if(this.product.old_price != null){
+		// 		return (
+		// 			<div className="mb-7">
+		// 				<span className="font-size-lg font-weight-bold text-gray-350 text-decoration-line-through">${this.product.old_price}</span>
+		// 				<span className="ml-1 font-size-h5 font-weight-bolder text-primary">${this.product.price}</span>
+		// 				<span className="font-size-sm ml-1">(In Stock)</span>
+		// 			</div>
+		// 		);
+		// 	}else{
+		// 		return (
+		// 			<div className="mb-7">
+		// 				<span className="ml-1 font-size-h5 font-weight-bolder text-primary">${this.product.price}</span>
+		// 				<span className="font-size-sm ml-1">(In Stock)</span>
+		// 			</div>
+		// 		);
+		// 	}
+		// }
+		return (
+			<div className="mb-7">
+				<span className="ml-1 font-size-h5 font-weight-bolder text-primary">${this.product.sell_price}</span>
+				<span className="font-size-sm ml-1">(In Stock)</span>
+			</div>
+		);
 	}
 
 	componentDidMount(){
@@ -192,7 +222,7 @@ export default class ProductPage extends Component{
 											<div className="col">
 
 												{/* <!-- Preheading --> */}
-												<a className="text-muted" href="shop.html">{Product.getTypeName(this.product.type)}</a>
+												<a className="text-muted" href="/shop">{this.product.Categorie}</a>
 
 											</div>
 										</div>

@@ -154,22 +154,22 @@ export default class Navbar extends Component<{className?:string}>{
 																	{/* <!-- Links --> */}
 																	<ul className="list-styled mb-6 mb-md-0 font-size-sm">
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop?season=[1, 2, 3, 4]">Season</a>
+																			<a className="list-styled-link" href="/shop?new_in=1&#season">Season</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop?this_week=1">This Week</a>
+																			<a className="list-styled-link" href="/shop?new_in=1&this_week=1">This Week</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop?this_month=1">This Month</a>
+																			<a className="list-styled-link" href="/shop?new_in=1&this_month=1">This Month</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop?color=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]">Color</a>
+																			<a className="list-styled-link" href="/shop?new_in=1&color=[1,2,3,4,5,6,7,8,9,10,11]">Color</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop?last_arrivals=1">Last arrivals</a>
+																			<a className="list-styled-link" href="/shop?new_in=1&last_arrivals=1">Last arrivals</a>
 																		</li>
 																		<li className="list-styled-item">
-																			<a className="list-styled-link" href="/shop?best_sellers=1">Best Sellers</a>
+																			<a className="list-styled-link" href="/shop?new_in=1&best_sellers=1">Best Sellers</a>
 																		</li>
 																	</ul>
 
@@ -775,7 +775,7 @@ export default class Navbar extends Component<{className?:string}>{
 								<li className="nav-item dropdown position-static">
 
 									{/* <!-- Toggle --> */}
-									<a className="nav-link" data-toggle="dropdown" href="#">Sales</a>
+									<a className="nav-link" data-toggle="dropdown" href="#" style={{color: "#FF0000"}}>Sales</a>
 
 									{/* <!-- Menu --> */}
 									<div className="dropdown-menu" style={{width: "80%"}}>
