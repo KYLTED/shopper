@@ -59,11 +59,11 @@ export default class ShopProductCard extends Component<IShopProductCard>{
 	renderPrices(){
 		if(this.product != null){
 			if(this.product.sell_price != null){
-				if(this.product.suggested_price != null){
+				if(this.product.priceDiscount != null && this.product.priceDiscount){
 					return (
 						<div className="font-weight-bold">
-							<span className="font-size-xs text-gray-350 text-decoration-line-through">${this.product.suggested_price.toFixed(2)}</span>
-							<span className="text-primary">${this.product.sell_price.toFixed(2)}</span>
+							<span className="font-size-xs text-gray-350 text-decoration-line-through">${this.product.sell_price.toFixed(2)}</span>
+							<span className="text-primary">${(this.product.sell_price - this.product.priceDiscount).toFixed(2)}</span>
 						</div>
 					)
 				}else{

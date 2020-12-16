@@ -36,9 +36,7 @@ export default class API {
 			Axios.get(query, API.AXIOS_CONFIG)
 				.then(result => {
 					if(result != null){
-						console.log("API RESULT HERE: ")
-						console.log(result)
-						res(result.data.products)
+						res(result.data.data.products)
 					}
 					else
 						res([])

@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
-import axios from 'axios'
 
 import Navbar from "../Navbar"
 import Footer from '../Footer'
@@ -481,12 +480,31 @@ export default class ShopPage extends Component{
 		ReactDOM.render(elements, tags_container);
 	}
 
+	refreshUrlArg(){
+		var urlParams = new URLSearchParams(window.location.search);
+		
+		//Category
+		let $category = $('input[name="category"]:checked');
+		let category:any = $category.val();
+		if(category != 0)	urlParams.set('Categorie', category);
+		else urlParams.delete('Categorie');
+		
+		//Season
+		let $season = $('input[name="season"]:checked');
+		let season:any = $season.val();
+		if(season != 0)	urlParams.set('season', season);
+		else urlParams.delete('season');
+		
+		window.history.replaceState("", "", "?"+urlParams.toString())
+	}
+
 	constructor(props: any){
 		super(props);
 		this.page = 1;
 	}
 
 	refreshProducts(){
+		this.refreshUrlArg()
 		this.renderTags();
 		//Get Products from api
 		API.get_products(9, this.page, Geral.getAllUrlParams()).then(products=>{
@@ -509,7 +527,9 @@ export default class ShopPage extends Component{
 
 	componentDidMount(){
 		this.refreshProducts();
-		$('input[type="checkbox"]').on('change', () => this.refreshProducts())
+		$('input[type="radio"], input[type="checkbox"]').on('click', (event) => {
+			this.refreshProducts()
+		})
 	}
 
   render(){
@@ -535,12 +555,36 @@ export default class ShopPage extends Component{
 											</a>
 
 											{/* <!-- Collapse --> */}
-											<div className="collapse" id="categoryCollapse" data-toggle="simplebar" data-target="#categoryGroup">
+											<div className="collapse show" id="categoryCollapse" data-toggle="simplebar" data-target="#categoryGroup">
 												<div className="form-group form-group-overflow mb-6" id="categoryGroup">
-													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="shoes" type="checkbox" />
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="category" id="all_categories" value={0} defaultChecked />
+														<label className="custom-control-label" htmlFor="all_categories">
+															All
+														</label>
+													</div>
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="category" id="shoes" value={Product.SHOES} />
 														<label className="custom-control-label" htmlFor="shoes">
 															Shoes
+														</label>
+													</div>
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="category" id="bags" value={Product.BAGS} />
+														<label className="custom-control-label" htmlFor="bags">
+															Bags
+														</label>
+													</div>
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="category" id="accessories" value={Product.ACCESSORIES} />
+														<label className="custom-control-label" htmlFor="accessories">
+															Accessories
+														</label>
+													</div>
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="category" id="shirts" value={Product.SHIRTS} />
+														<label className="custom-control-label" htmlFor="shirts">
+															Shirts
 														</label>
 													</div>
 												</div>
@@ -554,24 +598,30 @@ export default class ShopPage extends Component{
 											</a>
 
 											{/* <!-- Collapse --> */}
-											<div className="collapse" id="seasonCollapse" data-toggle="simplebar" data-target="#seasonGroup">
+											<div className="collapse show" id="seasonCollapse" data-toggle="simplebar" data-target="#seasonGroup">
 												<div className="form-group form-group-overflow mb-6" id="seasonGroup">
-													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="all_year" type="checkbox" />
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="season" id="all_season" defaultChecked value={0} />
+														<label className="custom-control-label" htmlFor="all_season">
+															All
+														</label>
+													</div>
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="season" id="all_year" value={Product.ALL_YEAR} />
 														<label className="custom-control-label" htmlFor="all_year">
 															All Year
 														</label>
 													</div>
-													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="fall_winter" type="checkbox" />
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="season" id="fall_winter" value={Product.FALL_WINTER} />
 														<label className="custom-control-label" htmlFor="fall_winter">
 															Fall/Winter
 														</label>
 													</div>
-													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="summer_spring" type="checkbox" />
-														<label className="custom-control-label" htmlFor="summer_spring">
-															Summer/Spring
+													<div className="custom-control custom-radio mb-3">
+														<input className="custom-control-input" type="radio" name="season" id="spring_summer" value={Product.SPRING_SUMMER} />
+														<label className="custom-control-label" htmlFor="spring_summer">
+															Spring/Summer
 														</label>
 													</div>
 												</div>
@@ -586,7 +636,7 @@ export default class ShopPage extends Component{
 											</a>
 
 											{/* <!-- Collapse --> */}
-											<div className="collapse" id="sizeCollapse" data-toggle="simplebar" data-target="#sizeGroup">
+											<div className="collapse show" id="sizeCollapse" data-toggle="simplebar" data-target="#sizeGroup">
 												<div className="form-group form-group-overlow mb-6" id="sizeGroup">
 													<div className="custom-control custom-control-inline custom-control-size mb-2">
 														<input className="custom-control-input" id="3xs" type="checkbox" />
@@ -666,7 +716,7 @@ export default class ShopPage extends Component{
 											</a>
 
 											{/* <!-- Collapse --> */}
-											<div className="collapse" id="colorCollapse" data-toggle="simplebar" data-target="#colorGroup">
+											<div className="collapse show" id="colorCollapse" data-toggle="simplebar" data-target="#colorGroup">
 												<div className="form-group form-group-overflow mb-6" id="colorGroup">
 													<div className="custom-control custom-control-color mb-3">
 														<input className="custom-control-input" id="black" type="checkbox" />
@@ -728,7 +778,7 @@ export default class ShopPage extends Component{
 											</a>
 
 											{/* <!-- Collapse --> */}
-											<div className="collapse" id="brandCollapse" data-toggle="simplebar" data-target="#brandGroup">
+											<div className="collapse show" id="brandCollapse" data-toggle="simplebar" data-target="#brandGroup">
 
 												{/* <!-- Search --> */}
 												<div data-toggle="lists" data-options='{"valueNames": ["name"]}'>
@@ -783,7 +833,7 @@ export default class ShopPage extends Component{
 											</a>
 
 											{/* <!-- Collapse --> */}
-											<div className="collapse" id="priceCollapse" data-toggle="simplebar" data-target="#priceGroup">
+											<div className="collapse show" id="priceCollapse" data-toggle="simplebar" data-target="#priceGroup">
 
 												{/* <!-- Form group--> */}
 												<div className="form-group form-group-overflow mb-6" id="priceGroup">
