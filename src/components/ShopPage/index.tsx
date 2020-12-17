@@ -16,6 +16,7 @@ import Geral from '../../app/controls/Geral'
 
 export default class ShopPage extends Component{
 	page:any;
+	brands:Array<string>;
 	
 	renderTags(){
 		let elements: Array<JSX.Element> = [];
@@ -489,11 +490,71 @@ export default class ShopPage extends Component{
 		if(category != 0)	urlParams.set('Categorie', category);
 		else urlParams.delete('Categorie');
 		
+		//SubCategory
+		let $subcategories: any = $('input[name="subcategory"]:checked');
+		urlParams.delete('Sottocategorie');
+		if($subcategories.length > 0){
+			$subcategories.each((index:number, subcategoryElement:any) => {
+				let subcategory:any = $(subcategoryElement).val();
+				urlParams.append('Sottocategorie', subcategory);
+			});
+		}else urlParams.delete('Sottocategorie');
+		
+		//Sizes
+		let $sizes: any = $('input[name="size"]:checked');
+		urlParams.delete('model_size');
+		if($sizes.length > 0){
+			$sizes.each((index:number, model_sizeElement:any) => {
+				let model_size:any = $(model_sizeElement).val();
+				urlParams.append('model_size', model_size);
+			});
+		}else urlParams.delete('model_size');
+		
+		//Color
+		let $colors: any = $('input[name="color"]:checked');
+		urlParams.delete('color');
+		if($colors.length > 0){
+			$colors.each((index:number, colorElement:any) => {
+				let color:any = $(colorElement).val();
+				urlParams.append('color', color);
+			});
+		}else urlParams.delete('color');
+		
+		//Brand
+		let $brands: any = $('input[name="brand"]:checked');
+		urlParams.delete('brand');
+		if($brands.length > 0){
+			$brands.each((index:number, brandElement:any) => {
+				let brand:any = $(brandElement).val();
+				urlParams.append('brand', brand);
+			});
+		}else urlParams.delete('brand');
+		
 		//Season
 		let $season = $('input[name="season"]:checked');
 		let season:any = $season.val();
 		if(season != 0)	urlParams.set('season', season);
 		else urlParams.delete('season');
+
+		//Price
+		let $prices: any = $('input[name="price_checkbox"]:checked');
+		urlParams.delete('price');
+		if($prices.length > 0){
+			$prices.each((index:number, priceElement:any) => {
+				let price:any = $(priceElement).val();
+				urlParams.append('price', price);
+			});
+		}else urlParams.delete('price');
+
+		let $rangeOne = $('#price_one');
+		let min:any = $rangeOne.val();
+		if(min != 0)	urlParams.set('min_price', min);
+		else urlParams.delete('min_price');
+
+		let $rangeTwo = $('#price_two');
+		let max:any = $rangeTwo.val();
+		if(max != 0)	urlParams.set('max_price', max);
+		else urlParams.delete('max_price');
 		
 		window.history.replaceState("", "", "?"+urlParams.toString())
 	}
@@ -501,35 +562,144 @@ export default class ShopPage extends Component{
 	constructor(props: any){
 		super(props);
 		this.page = 1;
+		this.brands = [];
+	}
+
+
+	renderSubcategories(subcategories:Array<string>) {
+		let elements: any =  $('input[name="subcategory"]:checked');
+		let selecteds:Array<string> = [];
+		if(elements.length > 0){
+			let values:Array<any> = [];
+			elements.each((index:number, element:JQuery<HTMLElement>) => {
+				let value:any = $(element).val();
+				values.push(value);
+			});
+			
+			values = values.sort().reverse();
+			
+			values.forEach(value => {
+				let sub = subcategories.find(s => s == value);
+				if(sub != null)
+					subcategories = subcategories.filter(s => s != value)
+				subcategories.unshift(value);
+				selecteds.push(value);
+			})
+		}
+
+		let reactElements:Array<JSX.Element> = [];
+		subcategories.forEach(subcategory => {
+			let is_select:boolean = selecteds.find(se => se == subcategory) != null;
+			let e = (
+				<div className="custom-control custom-checkbox mb-3" key={subcategory}>
+					<input className="custom-control-input" name="subcategory" id={subcategory} value={subcategory} type="checkbox" onChange={() => this.refreshProducts()} defaultChecked={is_select} />
+					<label className="custom-control-label" htmlFor={subcategory}>
+						{subcategory}
+					</label>
+				</div>
+			)
+			reactElements.push(e);
+		})
+
+		ReactDOM.render(reactElements, document.getElementById("subCategoryGroup"));
+	}
+	
+	renderBrands() {
+		let brands = this.brands.filter(brand => {
+			let text:any = $('#search-brand').val();
+			if(text == null || text == "") return true
+			else return brand.includes(text);
+		})
+		let elements: any =  $('input[name="brand"]:checked');
+		let selecteds:Array<string> = [];
+		if(elements.length > 0){
+			let values:Array<any> = [];
+			elements.each((index:number, element:JQuery<HTMLElement>) => {
+				let value:any = $(element).val();
+				values.push(value);
+			});
+			values = values.sort().reverse();
+
+			values.forEach(value => {
+				let sub = brands.find(s => s == value);
+				if(sub != null)
+					brands = brands.filter(s => s != value)
+				brands.unshift(value);
+				selecteds.push(value);
+			})
+		}
+
+		let reactElements:Array<JSX.Element> = [];
+		brands.forEach(brand => {
+			let is_select:boolean = selecteds.find(se => se == brand) != null;
+			let e = (
+				<div className="custom-control custom-checkbox mb-3" key={brand}>
+					<input className="custom-control-input" name="brand" id={brand} value={brand} type="checkbox" {...(is_select == true) ? "defaultChecked" : ""} onChange={() => this.refreshProducts()} />
+					<label className="custom-control-label" htmlFor={brand}>
+						{brand}
+					</label>
+				</div>
+			)
+			reactElements.push(e);
+		})
+
+		ReactDOM.render(reactElements, document.getElementById("brand-container"));
+	}
+	
+	renderSizes() {
+		API.get_sizes()
+		.then((sizes:Array<string>) => {
+				let reactElements:Array<JSX.Element> = [];
+				sizes.forEach(size => {
+					if(size != ""){
+						let e = (
+							<div className="custom-control custom-control-inline custom-control-size mb-2" key={size} onClick={() => this.refreshProducts()}>
+								<input className="custom-control-input" name="size" id={size} value={size} type="checkbox" />
+								<label className="custom-control-label" htmlFor={size}>
+									{size}
+								</label>
+							</div>
+						)
+						reactElements.push(e);
+					}
+				})
+				ReactDOM.render(reactElements, document.getElementById("sizes-container"));
+			})
+
 	}
 
 	refreshProducts(){
 		this.refreshUrlArg()
 		this.renderTags();
 		//Get Products from api
-		API.get_products(9, this.page, Geral.getAllUrlParams()).then(products=>{
-			if(products != null && document != null){
+		API.get_products(9, this.page, Geral.getAllUrlParams()).then((data:any)=>{
+			if(data != null && document != null){
 				let product_container = document.getElementById("products-container")!;
 				let elements:Array<JSX.Element> = [];
 				
-				products.forEach((product, index) => {
+				data.products.forEach((product:Product) => {
 					let e = (
-						<div className="col-6 col-md-4" key={product.id}>
+						<div className="col-6 col-md-4" key={product.product_id}>
 							<ShopProductCard product={product} />
 						</div>
 					);
 					elements.push(e);
 				});
 				ReactDOM.render(elements, product_container);
+				this.renderSubcategories(data.subcategories);
+
+				this.brands = data.brands;
+				this.renderBrands();
 			}
 		})
 	}
 
 	componentDidMount(){
-		this.refreshProducts();
 		$('input[type="radio"], input[type="checkbox"]').on('click', (event) => {
 			this.refreshProducts()
 		})
+		this.refreshProducts();
+		this.renderSizes();
 	}
 
   render(){
@@ -592,6 +762,26 @@ export default class ShopPage extends Component{
 
 										</li>
 										<li className="nav-item">
+
+											{/* <!-- Toggle --> */}
+											<a className="nav-link dropdown-toggle font-size-lg text-reset border-bottom mb-6" data-toggle="collapse" href="#subCategoryCollapse">
+												SubCategories
+											</a>
+
+											{/* <!-- Collapse --> */}
+											<div className="collapse show" id="subCategoryCollapse" data-toggle="simplebar" data-target="#subCategoryGroup">
+												<div className="form-group form-group-overflow mb-6" id="subCategoryGroup">
+													{/* <div className="custom-control custom-checkbox mb-3">
+														<input className="custom-control-input" id="summer" type="checkbox" />
+														<label className="custom-control-label" htmlFor="summer">
+															Summer
+														</label>
+													</div> */}
+												</div>
+											</div>
+
+										</li>
+										<li className="nav-item">
 											{/* <!-- Toggle --> */}
 											<a className="nav-link dropdown-toggle font-size-lg text-reset border-bottom mb-6" data-toggle="collapse" href="#seasonCollapse">
 												Season
@@ -638,71 +828,13 @@ export default class ShopPage extends Component{
 											{/* <!-- Collapse --> */}
 											<div className="collapse show" id="sizeCollapse" data-toggle="simplebar" data-target="#sizeGroup">
 												<div className="form-group form-group-overlow mb-6" id="sizeGroup">
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="3xs" type="checkbox" />
-														<label className="custom-control-label" htmlFor="3xs">
-															3XS
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="2xs" type="checkbox" />
-														<label className="custom-control-label" htmlFor="2xs">
-															2XS
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="xs" type="checkbox" />
-														<label className="custom-control-label" htmlFor="xs">
-															XS
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="s" type="checkbox" />
-														<label className="custom-control-label" htmlFor="s">
-															S
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="m" type="checkbox" />
-														<label className="custom-control-label" htmlFor="m">
-															M
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="l" type="checkbox" />
-														<label className="custom-control-label" htmlFor="l">
-															L
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="xl" type="checkbox" />
-														<label className="custom-control-label" htmlFor="xl">
-															XL
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="2xl" type="checkbox" />
-														<label className="custom-control-label" htmlFor="2xl">
-															2XL
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="3xl" type="checkbox" />
-														<label className="custom-control-label" htmlFor="3xl">
-															3XL
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="4xl" type="checkbox" />
-														<label className="custom-control-label" htmlFor="4xl">
-															4XL
-														</label>
-													</div>
-													<div className="custom-control custom-control-inline custom-control-size mb-2">
-														<input className="custom-control-input" id="one_size" type="checkbox" />
-														<label className="custom-control-label" htmlFor="one_size">
-															One Size
-														</label>
+													<div className="sizes-control" id="sizes-container" style={{maxHeight: "200px", overflow: 'auto'}}>
+														{/* <div className="custom-control custom-control-inline custom-control-size mb-2">
+															<input className="custom-control-input" id="3xs" type="checkbox" />
+															<label className="custom-control-label" htmlFor="3xs">
+																3XS
+															</label>
+														</div> */}
 													</div>
 												</div>
 											</div>
@@ -719,49 +851,49 @@ export default class ShopPage extends Component{
 											<div className="collapse show" id="colorCollapse" data-toggle="simplebar" data-target="#colorGroup">
 												<div className="form-group form-group-overflow mb-6" id="colorGroup">
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="black" type="checkbox" />
+														<input className="custom-control-input" name="color" id="black" type="checkbox" value={Product.BLACK} />
 														<label className="custom-control-label text-dark" htmlFor="black">
 															<span className="text-body">Black</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="white" type="checkbox" />
+														<input className="custom-control-input" name="color" id="white" type="checkbox" value={Product.WHITE} />
 														<label className="custom-control-label" style={{color: "#f9f9f9"}} htmlFor="white">
 															<span className="text-body">White</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="blue" type="checkbox" />
+														<input className="custom-control-input" name="color" id="blue" type="checkbox" value={Product.BLUE} />
 														<label className="custom-control-label text-info" htmlFor="blue">
 															<span className="text-body">Blue</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="red" type="checkbox" />
-														<label className="custom-control-label text-primary" htmlFor="red">
+														<input className="custom-control-input" name="color" id="red" type="checkbox" value={Product.RED} />
+														<label className="custom-control-label" style={{color: "#F00"}} htmlFor="red">
 															<span className="text-body">Red</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="brown" type="checkbox" />
+														<input className="custom-control-input" name="color" id="brown" type="checkbox" value={Product.BROWN} />
 														<label className="custom-control-label" htmlFor="brown" style={{color: "#795548"}}>
 															<span className="text-body">Brown</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="gray" type="checkbox" />
+														<input className="custom-control-input" name="color" id="gray" type="checkbox" value={Product.GRAY} />
 														<label className="custom-control-label text-gray-300" htmlFor="gray">
 															<span className="text-body">Gray</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color mb-3">
-														<input className="custom-control-input" id="cyan" type="checkbox" />
+														<input className="custom-control-input" name="color" id="cyan" type="checkbox" value={Product.CYAN} />
 														<label className="custom-control-label" htmlFor="cyan" style={{color: "#17a2b8"}}>
 															<span className="text-body">Cyan</span>
 														</label>
 													</div>
 													<div className="custom-control custom-control-color">
-														<input className="custom-control-input" id="pink" type="checkbox" />
+														<input className="custom-control-input" name="color" id="pink" type="checkbox" value={Product.PINK} />
 														<label className="custom-control-label" htmlFor="pink" style={{color: "#e83e8c"}}>
 															<span className="text-body">Pink</span>
 														</label>
@@ -785,7 +917,7 @@ export default class ShopPage extends Component{
 
 													{/* <!-- Input group --> */}
 													<div className="input-group input-group-merge mb-6">
-														<input className="form-control form-control-xs search" type="search" placeholder="Search Brand" />
+														<input className="form-control form-control-xs search" type="search" placeholder="Search Brand" id="search-brand" onKeyUp={() => this.renderBrands()} />
 
 														{/* <!-- Button --> */}
 														<div className="input-group-append">
@@ -798,25 +930,13 @@ export default class ShopPage extends Component{
 
 													{/* <!-- Form group --> */}
 													<div className="form-group form-group-overflow mb-6" id="brandGroup">
-														<div className="list">
-															<div className="custom-control custom-checkbox mb-3">
+														<div className="list" id="brand-container">
+															{/* <div className="custom-control custom-checkbox mb-3">
 																<input className="custom-control-input" id="brand_a" type="checkbox" />
 																<label className="custom-control-label name" htmlFor="brand_a">
 																	Brand a
 																</label>
-															</div>
-															<div className="custom-control custom-checkbox mb-3">
-																<input className="custom-control-input" id="brand_b" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="brand_b">
-																	Brand b
-																</label>
-															</div>
-															<div className="custom-control custom-checkbox">
-																<input className="custom-control-input" id="trussardi" type="checkbox" />
-																<label className="custom-control-label name" htmlFor="trussardi">
-																	Trussardi
-																</label>
-															</div>
+															</div> */}
 														</div>
 													</div>
 
@@ -838,25 +958,25 @@ export default class ShopPage extends Component{
 												{/* <!-- Form group--> */}
 												<div className="form-group form-group-overflow mb-6" id="priceGroup">
 													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="priceOne" type="checkbox" />
+														<input className="custom-control-input" id="priceOne" name="price_checkbox" type="checkbox" value={Product.TEN_FIFTY} />
 														<label className="custom-control-label" htmlFor="priceOne">
 															$10.00 - $49.99
 														</label>
 													</div>
 													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="priceTwo" type="checkbox" />
+														<input className="custom-control-input" id="priceTwo" name="price_checkbox" type="checkbox" value={Product.FIFTY_HUNDRED} />
 														<label className="custom-control-label" htmlFor="priceTwo">
 															$50.00 - $99.99
 														</label>
 													</div>
 													<div className="custom-control custom-checkbox mb-3">
-														<input className="custom-control-input" id="priceThree" type="checkbox" />
+														<input className="custom-control-input" id="priceThree" name="price_checkbox" type="checkbox" value={Product.HUNDRED_TWO_HUNDRED} />
 														<label className="custom-control-label" htmlFor="priceThree">
 															$100.00 - $199.99
 														</label>
 													</div>
 													<div className="custom-control custom-checkbox">
-														<input className="custom-control-input" id="priceFour" type="checkbox" />
+														<input className="custom-control-input" id="priceFour" name="price_checkbox" type="checkbox" value={Product.TWO_HUNDRED_UP} />
 														<label className="custom-control-label" htmlFor="priceFour">
 															$200.00 and Up
 														</label>
@@ -867,13 +987,13 @@ export default class ShopPage extends Component{
 												<div className="d-flex align-items-center">
 
 													{/* <!-- Input --> */}
-													<input type="number" className="form-control form-control-xs" placeholder="$10.00" min="10" id="range_one" />
+													<input type="number" className="form-control form-control-xs" placeholder="$10.00" min="10" max="1000" id="price_one" onKeyUp={() => {this.refreshProducts()}} />
 
 													{/* <!-- Divider --> */}
 													<div className="text-gray-350 mx-2">‒</div>
 
 													{/* <!-- Input --> */}
-													<input type="number" className="form-control form-control-xs" placeholder="$350.00" max="350" id="range_two" />
+													<input type="number" className="form-control form-control-xs" placeholder="$1000.00" max="1000" min="10" id="price_two" onKeyUp={() => {this.refreshProducts()}} />
 
 												</div>
 

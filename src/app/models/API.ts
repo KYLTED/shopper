@@ -9,8 +9,8 @@ export default class API {
 		}
 	};
 
-	public static REF  = "http://18.215.176.211:8000/api/";
-	// public static REF = "http://localhost:8000/api/";
+	// public static REF  = "http://18.215.176.211:8000/api/";
+	public static REF = "http://localhost:8000/api/";
 	public static PRODUCT = API.REF + "v1/products";
 
 	private static params_to_string(params: any): string {
@@ -31,17 +31,28 @@ export default class API {
 		return new Promise((res, rej) => {
 			let query = API.PRODUCT + "?record_type=PRODUCT&limit=" + limit + "&page=" + page;
 			query += API.params_to_string(params);
-			// console.log(query);
-			//Make Api request
 			Axios.get(query, API.AXIOS_CONFIG)
 				.then(result => {
 					if(result != null){
-						res(result.data.data.products)
+						res(result.data.data)
 					}
 					else
 						res([])
 				})
-			// res(require("../../data/products.json").data.products);
+		})
+	}
+
+	public static get_sizes(): Promise<Array<string>> {
+		return new Promise((res, rej) => {
+			let query = API.PRODUCT + "/sizes";
+			Axios.get(query, API.AXIOS_CONFIG)
+				.then(result => {
+					if(result != null){
+						res(result.data.data.sizes)
+					}
+					else
+						res([])
+				})
 		})
 	}
 	// season: Array<number> - Season of the product, Summer, Winter, Spring and Autumn.

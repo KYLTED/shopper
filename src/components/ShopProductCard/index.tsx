@@ -29,29 +29,21 @@ export default class ShopProductCard extends Component<IShopProductCard>{
 	}
 
 	renderImages(){
-		// if(this.product != null){
-		// 	if(this.product.pictures.length === 1){
-		// 		return (
-		// 			<a className="card-img" href={"/product/"+this.product.product_id}>
-		// 				<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[0]}/>
-		// 			</a>
-		// 		)
-		// 	}else if(this.product.pictures.length >= 2){
-		// 		return (
-		// 			<a className="card-img-hover" href={"/product/"+this.product.product_id}>
-		// 				<img className="card-img-top card-img-back" src={"/assets/img/products/"+this.product.pictures[0]}/>
-		// 				<img className="card-img-top card-img-front" src={"/assets/img/products/"+this.product.pictures[1]}/>
-		// 			</a>
-		// 		)
-		// 	}
-		// }
 		if(this.product != null){
-			return (
-				<a className="card-img-hover" href={"/product/"+this.product.product_id}>
-					<img className="card-img-top card-img-back" src={"/assets/img/products/product-11.jpg"}/>
-					<img className="card-img-top card-img-front" src={"/assets/img/products/product-10.jpg"}/>
-				</a>
-			)
+			if(this.product.picture_1 != "" && this.product.picture_2 != ""){
+				return (
+					<a className="card-img-hover" href={"/product/"+this.product.product_id}>
+						<img className="card-img-top card-img-back" src={this.product.picture_2}/>
+						<img className="card-img-top card-img-front" src={this.product.picture_1}/>
+					</a>
+				)
+			}else if(this.product.picture_1 != ""){
+				return (
+					<a className="card-img" href={"/product/"+this.product.product_id}>
+						<img className="card-img-top card-img-front" src={this.product.picture_1}/>
+					</a>
+				)
+			}
 		}
 		return "";
 	}
