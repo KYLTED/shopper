@@ -565,7 +565,6 @@ export default class ShopPage extends Component{
 		this.brands = [];
 	}
 
-
 	renderSubcategories(subcategories:Array<string>) {
 		let elements: any =  $('input[name="subcategory"]:checked');
 		let selecteds:Array<string> = [];

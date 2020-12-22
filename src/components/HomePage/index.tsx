@@ -7,9 +7,6 @@ import Promo from '../Promo'
 import Geral from '../../app/controls/Geral'
 
 export default class HomePage extends Component{
-	componentDidMount(){
-		// Geral.loadScripts();
-	}
   render(){
     return (
 			<div className="homepage"> 

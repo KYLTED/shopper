@@ -9,8 +9,8 @@ export default class API {
 		}
 	};
 
-	public static REF  = "http://18.215.176.211:8000/api/";
-	// public static REF = "http://localhost:8000/api/";
+	// public static REF  = "http://18.215.176.211:8000/api/";
+	public static REF = "http://localhost:8000/api/";
 	public static PRODUCT = API.REF + "v1/products";
 
 	private static params_to_string(params: any): string {
